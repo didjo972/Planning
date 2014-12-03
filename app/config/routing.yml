@@ -1,0 +1,5 @@
+# app/config/routing.yml
+home:
+    path:   /
+    defaults:  { _controller: PlanningBundle:Default:index }
+
