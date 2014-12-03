@@ -28,9 +28,31 @@ class __TwigTemplate_efad566a5595e0252d4a61e26b6bd946b495e2dc7df3424b69efefdbcf6
     public function block_body($context, array $blocks = array())
     {
         // line 3
-        echo "    Hello ";
+        echo "    <div class='page'>
+        Hello ";
+        // line 4
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
         echo "!
+        <table>
+            <tr>
+                <td colspan=\"9\">M2 STL INSTA - EDT S3 - 2014-2015 (Du 15/09 au 07/11/2014)</td>
+            </tr>
+            <tr>
+                <td>8h30</td>
+                <td>9h</td>
+                <td>9h30</td>
+                <td>9h</td>
+                <td>10h30</td>
+                <td>11h</td>
+                <td>11h30</td>
+                <td>12h</td>
+                <td>12h30</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
 ";
     }
 
@@ -46,6 +68,6 @@ class __TwigTemplate_efad566a5595e0252d4a61e26b6bd946b495e2dc7df3424b69efefdbcf6
 
     public function getDebugInfo()
     {
-        return array (  31 => 3,  28 => 2,);
+        return array (  34 => 4,  31 => 3,  28 => 2,);
     }
 }
