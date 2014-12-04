@@ -1,0 +1,28 @@
+Classe:
+    type: entity
+    table: classe
+    id:
+        idclasse:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelle:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+    manyToMany:
+        promotionpromotion:
+            targetEntity: Promotion
+            cascade: {  }
+            mappedBy: classeclasse
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

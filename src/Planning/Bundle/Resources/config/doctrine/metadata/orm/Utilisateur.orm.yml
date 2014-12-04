@@ -1,0 +1,60 @@
+Utilisateur:
+    type: entity
+    table: utilisateur
+    indexes:
+        fk_utilisateur_cours1_idx:
+            columns:
+                - cours_idcours
+        fk_utilisateur_classe1_idx:
+            columns:
+                - classe_idclasse
+    id:
+        idutilisateur:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        prenom:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+    manyToOne:
+        courscours:
+            targetEntity: Cours
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cours_idcours:
+                    referencedColumnName: idcours
+            orphanRemoval: false
+        classeclasse:
+            targetEntity: Classe
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                classe_idclasse:
+                    referencedColumnName: idclasse
+            orphanRemoval: false
+    manyToMany:
+        rolerole:
+            targetEntity: Role
+            cascade: {  }
+            mappedBy: utilisateurutilisateur
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

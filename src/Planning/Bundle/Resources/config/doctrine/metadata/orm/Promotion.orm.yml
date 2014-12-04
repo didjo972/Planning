@@ -1,0 +1,37 @@
+Promotion:
+    type: entity
+    table: promotion
+    id:
+        idpromotion:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        numPromotion:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: num_promotion
+    manyToMany:
+        classeclasse:
+            targetEntity: Classe
+            cascade: {  }
+            mappedBy: null
+            inversedBy: promotionpromotion
+            joinTable:
+                name: promotion_has_classe
+                joinColumns:
+                    -
+                        name: promotion_idpromotion
+                        referencedColumnName: idpromotion
+                inverseJoinColumns:
+                    -
+                        name: classe_idclasse
+                        referencedColumnName: idclasse
+            orderBy: null
+    lifecycleCallbacks: {  }
