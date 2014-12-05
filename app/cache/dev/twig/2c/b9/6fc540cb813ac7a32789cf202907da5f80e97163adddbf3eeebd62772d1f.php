@@ -24,40 +24,56 @@ class __TwigTemplate_2cb96fc540cb813ac7a32789cf202907da5f80e97163adddbf3eeebd627
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 5
+    // line 4
     public function block_body($context, array $blocks = array())
     {
-        // line 6
+        // line 5
         echo "
   ";
-        // line 8
+        // line 7
         echo "  ";
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 9
+            // line 8
             echo "    <div class=\"alert alert-danger\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "message", array()), "html", null, true);
             echo "</div>
   ";
         }
-        // line 11
+        // line 10
         echo "
   ";
-        // line 13
-        echo "  <form action=\"";
+        // line 12
+        echo "  <div class=\"page\">
+        <div class=\"header\">
+            CFA INSTA PLANNING
+        </div>
+        <div class=\"page-content\">
+            <div class=\"formulaire\">
+                <div class=\"login\">
+                Welcome !
+                <form action=\"";
+        // line 20
         echo $this->env->getExtension('routing')->getPath("login_check");
         echo "\" method=\"post\">
-    <label for=\"username\">Login :</label>
-    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 15
+                    <table>
+                        <tr>
+                            <td><label for=\"username\">Utilisateur :</label></td>
+                            <td><input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 24
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" />
-
-    <label for=\"password\">Mot de passe :</label>
-    <input type=\"password\" id=\"password\" name=\"_password\" />
-    <br />
-    <input type=\"submit\" value=\"Connexion\" />
-  </form>
-
+        echo "\" style=\"max-width: 100px\"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for=\"password\">Mot de passe :</label></td>
+                            <td><input type=\"password\" id=\"password\" name=\"_password\" style=\"max-width: 100px\" /></td>
+                        </tr>
+                    </table>
+                    <input class=\"bt-valider\" type=\"submit\" value=\"Connexion\" />    
+                </form>
+                </div>
+            </div>
+        </div>
+  </div>
 ";
     }
 
@@ -73,6 +89,6 @@ class __TwigTemplate_2cb96fc540cb813ac7a32789cf202907da5f80e97163adddbf3eeebd627
 
     public function getDebugInfo()
     {
-        return array (  52 => 15,  46 => 13,  43 => 11,  37 => 9,  34 => 8,  31 => 6,  28 => 5,);
+        return array (  63 => 24,  56 => 20,  46 => 12,  43 => 10,  37 => 8,  34 => 7,  31 => 5,  28 => 4,);
     }
 }

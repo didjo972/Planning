@@ -33,7 +33,7 @@ class __TwigTemplate_a53e03c7a62b473f23d1a313afd50cba18f59726460ad74aae966c152fd
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 9
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("logo.ico"), "html", null, true);
         echo "\" />
     </head>
     <body>
@@ -59,9 +59,9 @@ class __TwigTemplate_a53e03c7a62b473f23d1a313afd50cba18f59726460ad74aae966c152fd
     public function block_stylesheets($context, array $blocks = array())
     {
         // line 7
-        echo "            <link rel=\"stylesheet\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/css/style.css"), "html", null, true);
-        echo "\" type=\"text/css\" />
+        echo "            <link href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/planninguser/css/style.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
         ";
     }
 

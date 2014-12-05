@@ -1,7 +1,6 @@
 {# empty Twig template #}
 
 {% extends '::base.html.twig' %}
-
 {% block body %}
 
   {# S'il y a une erreur, on l'affiche dans un joli cadre #}
@@ -10,14 +9,29 @@
   {% endif %}
 
   {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
-  <form action="{{ path('login_check') }}" method="post">
-    <label for="username">Login :</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
-
-    <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="_password" />
-    <br />
-    <input type="submit" value="Connexion" />
-  </form>
-
+  <div class="page">
+        <div class="header">
+            CFA INSTA PLANNING
+        </div>
+        <div class="page-content">
+            <div class="formulaire">
+                <div class="login">
+                Welcome !
+                <form action="{{ path('login_check') }}" method="post">
+                    <table>
+                        <tr>
+                            <td><label for="username">Utilisateur :</label></td>
+                            <td><input type="text" id="username" name="_username" value="{{ last_username }}" style="max-width: 100px"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Mot de passe :</label></td>
+                            <td><input type="password" id="password" name="_password" style="max-width: 100px" /></td>
+                        </tr>
+                    </table>
+                    <input class="bt-valider" type="submit" value="Connexion" />    
+                </form>
+                </div>
+            </div>
+        </div>
+  </div>
 {% endblock %}
