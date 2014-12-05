@@ -1,0 +1,35 @@
+hello-the-world:
+    path:    /hello-world
+    defaults: { _controller: PlanningUserBundle:Advert:index }
+
+home:
+    path:    /
+    defaults: { _controller: PlanningUserBundle:Advert:home }
+
+index:
+    path:    /Accueil
+    defaults: { _controller: PlanningUserBundle:Advert:home }
+    
+planning:
+    path:    /Planning
+    defaults: { _controller: PlanningUserBundle:Advert:planning }
+    
+essaie:
+    path:    /ajouter
+    defaults: { _controller: PlanningUserBundle:Cours:ajoutercours }
+    
+essaie2:
+    path:    /recuperer
+    defaults: { _controller: PlanningUserBundle:Cours:recuperercours }
+    
+login:
+    path:    /login
+    defaults: { _controller: PlanningUserBundle:Security:login }
+    
+login_check:
+    path:    /login_check
+
+logout:
+    path:    /logout
+
+    

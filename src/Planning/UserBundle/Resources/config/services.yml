@@ -1,0 +1,4 @@
+services:
+#    planning_user.example:
+#        class: Planning\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

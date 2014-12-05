@@ -28,7 +28,7 @@ class __TwigTemplate_efad566a5595e0252d4a61e26b6bd946b495e2dc7df3424b69efefdbcf6
     public function block_body($context, array $blocks = array())
     {
         // line 3
-        echo "    <div class='page'>
+        echo "    <div class=page>
         Hello ";
         // line 4
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
@@ -50,8 +50,17 @@ class __TwigTemplate_efad566a5595e0252d4a61e26b6bd946b495e2dc7df3424b69efefdbcf6
             </tr>
             <tr>
                 <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
         </table>
+        <a 
     </div>
 ";
     }

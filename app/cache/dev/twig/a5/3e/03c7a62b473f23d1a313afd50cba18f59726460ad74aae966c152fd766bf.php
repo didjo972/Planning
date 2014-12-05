@@ -31,20 +31,19 @@ class __TwigTemplate_a53e03c7a62b473f23d1a313afd50cba18f59726460ad74aae966c152fd
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
+        // line 9
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
-        <!--<link rel=\"stylesheet\" href=\"web\\style.css\" type=\"text/css\" />-->
     </head>
     <body>
         ";
-        // line 11
-        $this->displayBlock('body', $context, $blocks);
         // line 12
+        $this->displayBlock('body', $context, $blocks);
+        // line 13
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 13
+        // line 14
         echo "    </body>
 </html>
 ";
@@ -53,20 +52,25 @@ class __TwigTemplate_a53e03c7a62b473f23d1a313afd50cba18f59726460ad74aae966c152fd
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        echo "Welcome!";
+        echo "CFA INSTA";
     }
 
     // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
+        // line 7
+        echo "            <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/css/style.css"), "html", null, true);
+        echo "\" type=\"text/css\" />
+        ";
     }
 
-    // line 11
+    // line 12
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 12
+    // line 13
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -83,6 +87,6 @@ class __TwigTemplate_a53e03c7a62b473f23d1a313afd50cba18f59726460ad74aae966c152fd
 
     public function getDebugInfo()
     {
-        return array (  70 => 12,  65 => 11,  60 => 6,  54 => 5,  48 => 13,  45 => 12,  43 => 11,  35 => 7,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  74 => 13,  69 => 12,  62 => 7,  59 => 6,  53 => 5,  47 => 14,  44 => 13,  42 => 12,  35 => 9,  33 => 6,  29 => 5,  23 => 1,);
     }
 }

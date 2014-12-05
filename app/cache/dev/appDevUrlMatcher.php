@@ -127,13 +127,59 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // hello-the-world
+        if ($pathinfo === '/hello-world') {
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::indexAction',  '_route' => 'hello-the-world',);
+        }
+
         // home
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'home');
             }
 
-            return array (  '_controller' => 'Planning\\Bundle\\Controller\\DefaultController::indexAction',  '_route' => 'home',);
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::homeAction',  '_route' => 'home',);
+        }
+
+        // index
+        if ($pathinfo === '/Accueil') {
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::homeAction',  '_route' => 'index',);
+        }
+
+        // planning
+        if ($pathinfo === '/Planning') {
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::planningAction',  '_route' => 'planning',);
+        }
+
+        // essaie
+        if ($pathinfo === '/ajouter') {
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\CoursController::ajoutercoursAction',  '_route' => 'essaie',);
+        }
+
+        // essaie2
+        if ($pathinfo === '/recuperer') {
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\CoursController::recuperercoursAction',  '_route' => 'essaie2',);
+        }
+
+        if (0 === strpos($pathinfo, '/log')) {
+            if (0 === strpos($pathinfo, '/login')) {
+                // login
+                if ($pathinfo === '/login') {
+                    return array (  '_controller' => 'Planning\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+                }
+
+                // login_check
+                if ($pathinfo === '/login_check') {
+                    return array('_route' => 'login_check');
+                }
+
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array('_route' => 'logout');
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

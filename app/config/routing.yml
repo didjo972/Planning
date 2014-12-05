@@ -1,5 +1,7 @@
 # app/config/routing.yml
-home:
-    path:   /
-    defaults:  { _controller: PlanningBundle:Default:index }
+
+planning_user:
+    resource: "@PlanningUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
