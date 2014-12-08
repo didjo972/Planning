@@ -19,7 +19,9 @@ ul
 {
     display: table;
     width: 500px;
-    margin: 100px auto;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
     background: linear-gradient(deepskyblue, dodgerblue);
     background: -webkit-linear-gradient(deepskyblue, dodgerblue);

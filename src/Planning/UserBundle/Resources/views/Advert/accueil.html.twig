@@ -2,11 +2,13 @@
 {% block body %}
     <div class="page">
         {% include ('PlanningUserBundle:Advert:menu.html.twig') %}
-        <form class="form" >
-            <div class="recherche">
-		<input type="text" name="keyword" />
-		<button>ok</button>
-            </div>
-        </form>
+        <div id="bloc-rechercher">
+            <form class="form" action="" method="post">
+                <div class="recherche">
+                    <input type="text" name="keyword" />
+                    <button>ok</button>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock %}
