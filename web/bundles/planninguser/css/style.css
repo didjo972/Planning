@@ -11,20 +11,11 @@ div.page
 {
     margin-left: auto;
     margin-right: auto;
-    width: 1280px;
-    height: 740px;
+    width: 960px;
+    height: auto;
     text-align: center;
-    background-image: url("../images/hiver_source.jpg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    
+    box-shadow: 0 0 10px #aaa;
 }
-
-/*div.page-content
-{
-    margin-left: auto;
-    margin-right: auto;
-}*/
 
 div.formulaire
 {
@@ -33,25 +24,26 @@ div.formulaire
     top: 50%;
     width: 300px;
     height: 200px;
-    margin-left: -150px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-left: -100px; /* Cette valeur doit être la moitié négative de la valeur du width */
     margin-top: -100px;  /* Cette valeur doit être la moitié négative de la valeur du width */
     text-align: center;
+    border-width: 2px;
     border-style: solid;
     border-color: black;
     background:#D3D3D3;
-    border-radius: 8px;
 }
-/*div.login
+div.login
 {
     position:absolute;
     left: 50%;
     top: 50%;
     width: 300px;
     height: 100px;
-    margin-left: -130px;*/ /* Cette valeur doit être la moitié négative de la valeur du width */
-    //margin-top: -50px;  /* Cette valeur doit être la moitié négative de la valeur du width */
-    //text-align: center;
-//}
+    margin-left: -130px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -50px;  /* Cette valeur doit être la moitié négative de la valeur du width */
+    text-align: center;
+}
+
 .bt-valider {
     font-family: Arial,sans-serif;
     font-size: 1.0em;

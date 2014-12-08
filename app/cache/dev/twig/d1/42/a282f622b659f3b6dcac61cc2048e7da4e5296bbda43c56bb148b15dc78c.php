@@ -28,8 +28,7 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "    <div class=\"mainheader\">
-            <div class=\"header_logo\"></div>
+        echo "            <div class=\"header_logo\"></div>
                 <div class=\"menu\">
                     <ul>
                         <li>
@@ -54,8 +53,6 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
                         </li>
                     </ul>
                 </div>
-            <div class=\"header_deco\"></div>
-        </div>
 ";
     }
 

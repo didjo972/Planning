@@ -29,7 +29,16 @@ class __TwigTemplate_b1253b82451fda4f7097388a7d261110ee9606c6e32545341733dc81801
     {
         // line 3
         echo "    <div class=\"page\">
-        
+        ";
+        // line 4
+        $this->env->loadTemplate("PlanningUserBundle:Advert:menu.html.twig")->display($context);
+        // line 5
+        echo "        <form class=\"form\">
+            <div class=\"recherche\">
+\t\t<input type=\"text\" name=\"keyword\" />
+\t\t<button>ok</button>
+            </div>
+        </form>
     </div>
 ";
     }
@@ -46,6 +55,6 @@ class __TwigTemplate_b1253b82451fda4f7097388a7d261110ee9606c6e32545341733dc81801
 
     public function getDebugInfo()
     {
-        return array (  31 => 3,  28 => 2,);
+        return array (  36 => 5,  34 => 4,  31 => 3,  28 => 2,);
     }
 }
