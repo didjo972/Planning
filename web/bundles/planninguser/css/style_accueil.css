@@ -30,46 +30,6 @@ div.mainheader
     height: 110px;
 }
 
-div.menu
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    height: 100px;
-}
-
-ul 
-{
-    font : bold 11px Batang, arial, serif;
-    list-style-type : none;
-    padding-bottom : 29px; /* à modifier suivant la taille de la police ET de la hauteur de l'onglet dans li */
-    border-bottom : 1px solid #fff;
-    margin-left : 0;
- }
- 
-li 
-{
-    float : left;
-    height : 26px; /* à modifier suivant la taille de la police pour centrer le texte dans l'onglet */
-    background-color: #F4F9FD;
-    margin : 2px 2px 0 2px !important;  /* Pour les navigateurs autre que IE */
-    margin : 1px 2px 0 2px;  /* Pour IE  */
-    border : 1px solid #fff;
- }
- 
-ul li a 
-{
-    display : block;
-    color : #666;
-    text-decoration : none;
-    padding : 7px;
- }
- 
-ul li a:hover 
-{
-    background : #fff;
- } 
-
 div.header_logo
 {
     position:absolute;
