@@ -10,12 +10,9 @@
 
   {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
   <div class="page">
-        <div class="header">
-            CFA INSTA PLANNING
-        </div>
+      <!--<label for="INSTA">CFA INSTA</label>-->
         <div class="page-content">
             <div class="formulaire">
-                <div class="login">
                 Welcome !
                 <form action="{{ path('login_check') }}" method="post">
                     <table>
@@ -30,7 +27,6 @@
                     </table>
                     <input class="bt-valider" type="submit" value="Connexion" />    
                 </form>
-                </div>
             </div>
         </div>
   </div>
