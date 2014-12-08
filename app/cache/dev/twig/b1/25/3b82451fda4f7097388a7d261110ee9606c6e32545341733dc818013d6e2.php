@@ -29,34 +29,7 @@ class __TwigTemplate_b1253b82451fda4f7097388a7d261110ee9606c6e32545341733dc81801
     {
         // line 3
         echo "    <div class=\"page\">
-        <div class=\"mainheader\">
-            <div class=\"header_logo\"></div>
-                <div class=\"menu\">
-                    <ul>
-                        <li>
-                            <a href=\"/Accueil\">
-                                Accueil
-                            </a>
-                        </li>
-                        <li>
-                            <a href=\"/MonProjetPhp/Planning/web/app_dev.php/Planning\">
-                                Planning
-                            </a>
-                        </li>
-                        <li>
-                            <a href=\"/Notes\">
-                                Notes
-                            </a>
-                        </li>
-                        <li>
-                            <a href=\"/Absence\">
-                                Absence
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            <div class=\"header_deco\"></div>
-        </div>
+        
     </div>
 ";
     }

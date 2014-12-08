@@ -44,22 +44,19 @@ class __TwigTemplate_2cb96fc540cb813ac7a32789cf202907da5f80e97163adddbf3eeebd627
   ";
         // line 12
         echo "  <div class=\"page\">
-        <div class=\"header\">
-            CFA INSTA PLANNING
-        </div>
+      <!--<label for=\"INSTA\">CFA INSTA</label>-->
         <div class=\"page-content\">
             <div class=\"formulaire\">
-                <div class=\"login\">
                 Welcome !
                 <form action=\"";
-        // line 20
+        // line 17
         echo $this->env->getExtension('routing')->getPath("login_check");
         echo "\" method=\"post\">
                     <table>
                         <tr>
                             <td><label for=\"username\">Utilisateur :</label></td>
                             <td><input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 24
+        // line 21
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
         echo "\" style=\"max-width: 100px\"/></td>
                         </tr>
@@ -70,7 +67,6 @@ class __TwigTemplate_2cb96fc540cb813ac7a32789cf202907da5f80e97163adddbf3eeebd627
                     </table>
                     <input class=\"bt-valider\" type=\"submit\" value=\"Connexion\" />    
                 </form>
-                </div>
             </div>
         </div>
   </div>
@@ -89,6 +85,6 @@ class __TwigTemplate_2cb96fc540cb813ac7a32789cf202907da5f80e97163adddbf3eeebd627
 
     public function getDebugInfo()
     {
-        return array (  63 => 24,  56 => 20,  46 => 12,  43 => 10,  37 => 8,  34 => 7,  31 => 5,  28 => 4,);
+        return array (  60 => 21,  53 => 17,  46 => 12,  43 => 10,  37 => 8,  34 => 7,  31 => 5,  28 => 4,);
     }
 }
