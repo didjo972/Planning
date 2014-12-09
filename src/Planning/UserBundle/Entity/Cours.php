@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Cours
  *
- * @ORM\Table(name="cours")
+ * @ORM\Table(name="cours", indexes={@ORM\Index(name="fk_cours_promotion1_idx", columns={"promotion_idpromotion"}), @ORM\Index(name="fk_cours_matière1_idx", columns={"matiere_idMatiere"}), @ORM\Index(name="fk_cours_professeur1_idx", columns={"professeur_idprofesseur"})})
  * @ORM\Entity
  */
 class Cours
@@ -20,20 +20,6 @@ class Cours
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idcours;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="lieu", type="string", length=45, nullable=true)
-     */
-    private $lieu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="matiere", type="string", length=45, nullable=true)
-     */
-    private $matiere;
 
     /**
      * @var integer
@@ -56,6 +42,36 @@ class Cours
      */
     private $dateFin;
 
+    /**
+     * @var \Promotion
+     *
+     * @ORM\ManyToOne(targetEntity="Promotion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="promotion_idpromotion", referencedColumnName="idpromotion")
+     * })
+     */
+    private $promotionpromotion;
+
+    /**
+     * @var \Matiere
+     *
+     * @ORM\ManyToOne(targetEntity="Matiere")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="matiere_idMatiere", referencedColumnName="idMatiere")
+     * })
+     */
+    private $matierematiere;
+
+    /**
+     * @var \Professeur
+     *
+     * @ORM\ManyToOne(targetEntity="Professeur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="professeur_idprofesseur", referencedColumnName="idprofesseur")
+     * })
+     */
+    private $professeurprofesseur;
+
 
 
     /**
@@ -66,52 +82,6 @@ class Cours
     public function getIdcours()
     {
         return $this->idcours;
-    }
-
-    /**
-     * Set lieu
-     *
-     * @param string $lieu
-     * @return Cours
-     */
-    public function setLieu($lieu)
-    {
-        $this->lieu = $lieu;
-
-        return $this;
-    }
-
-    /**
-     * Get lieu
-     *
-     * @return string 
-     */
-    public function getLieu()
-    {
-        return $this->lieu;
-    }
-
-    /**
-     * Set matiere
-     *
-     * @param string $matiere
-     * @return Cours
-     */
-    public function setMatiere($matiere)
-    {
-        $this->matiere = $matiere;
-
-        return $this;
-    }
-
-    /**
-     * Get matiere
-     *
-     * @return string 
-     */
-    public function getMatiere()
-    {
-        return $this->matiere;
     }
 
     /**
@@ -181,5 +151,74 @@ class Cours
     public function getDateFin()
     {
         return $this->dateFin;
+    }
+
+    /**
+     * Set promotionpromotion
+     *
+     * @param \Planning\UserBundle\Entity\Promotion $promotionpromotion
+     * @return Cours
+     */
+    public function setPromotionpromotion(\Planning\UserBundle\Entity\Promotion $promotionpromotion = null)
+    {
+        $this->promotionpromotion = $promotionpromotion;
+
+        return $this;
+    }
+
+    /**
+     * Get promotionpromotion
+     *
+     * @return \Planning\UserBundle\Entity\Promotion 
+     */
+    public function getPromotionpromotion()
+    {
+        return $this->promotionpromotion;
+    }
+
+    /**
+     * Set matierematiere
+     *
+     * @param \Planning\UserBundle\Entity\Matiere $matierematiere
+     * @return Cours
+     */
+    public function setMatierematiere(\Planning\UserBundle\Entity\Matiere $matierematiere = null)
+    {
+        $this->matierematiere = $matierematiere;
+
+        return $this;
+    }
+
+    /**
+     * Get matierematiere
+     *
+     * @return \Planning\UserBundle\Entity\Matiere 
+     */
+    public function getMatierematiere()
+    {
+        return $this->matierematiere;
+    }
+
+    /**
+     * Set professeurprofesseur
+     *
+     * @param \Planning\UserBundle\Entity\Professeur $professeurprofesseur
+     * @return Cours
+     */
+    public function setProfesseurprofesseur(\Planning\UserBundle\Entity\Professeur $professeurprofesseur = null)
+    {
+        $this->professeurprofesseur = $professeurprofesseur;
+
+        return $this;
+    }
+
+    /**
+     * Get professeurprofesseur
+     *
+     * @return \Planning\UserBundle\Entity\Professeur 
+     */
+    public function getProfesseurprofesseur()
+    {
+        return $this->professeurprofesseur;
     }
 }

@@ -21,11 +21,12 @@ Salle:
             unsigned: false
             comment: ''
             column: num_salle
-        occuper:
+        nbPc:
             type: integer
             nullable: true
             unsigned: false
             comment: ''
+            column: nb_PC
     manyToOne:
         courscours:
             targetEntity: Cours

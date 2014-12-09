@@ -1,6 +1,10 @@
 Professeur:
     type: entity
     table: professeur
+    indexes:
+        fk_professeur_user1_idx:
+            columns:
+                - user_id
     id:
         idprofesseur:
             type: integer
@@ -23,4 +27,14 @@ Professeur:
             length: 255
             fixed: false
             comment: ''
+    manyToOne:
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
     lifecycleCallbacks: {  }

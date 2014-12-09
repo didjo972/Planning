@@ -17,25 +17,25 @@ User:
     fields:
         username:
             type: string
-            nullable: false
+            nullable: true
             length: 255
             fixed: false
             comment: ''
         password:
             type: string
-            nullable: false
+            nullable: true
             length: 255
             fixed: false
             comment: ''
         salt:
             type: string
-            nullable: false
+            nullable: true
             length: 255
             fixed: false
             comment: ''
         roles:
             type: array
-            nullable: false
+            nullable: true
             length: null
             fixed: false
             comment: ''

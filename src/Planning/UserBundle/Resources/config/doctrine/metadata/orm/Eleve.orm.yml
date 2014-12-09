@@ -1,6 +1,10 @@
 Eleve:
     type: entity
     table: eleve
+    indexes:
+        fk_eleve_user1_idx:
+            columns:
+                - user_id
     id:
         ideleve:
             type: integer
@@ -23,4 +27,14 @@ Eleve:
             length: 45
             fixed: false
             comment: ''
+    manyToOne:
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
     lifecycleCallbacks: {  }

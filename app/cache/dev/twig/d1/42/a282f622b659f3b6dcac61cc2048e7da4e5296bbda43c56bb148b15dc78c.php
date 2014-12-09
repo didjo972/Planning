@@ -37,7 +37,10 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
                             </a>
                         </li>
                         <li>
-                            <a href=\"/MonProjetPhp/Planning/web/app_dev.php/Planning\">
+                            <a href=\"";
+        // line 13
+        echo $this->env->getExtension('routing')->getPath("planning");
+        echo "\">
                                 Planning
                             </a>
                         </li>
@@ -47,8 +50,11 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
                             </a>
                         </li>
                         <li>
-                            <a href=\"/Absence\">
-                                Absence
+                            <a href=\"";
+        // line 23
+        echo $this->env->getExtension('routing')->getPath("logout");
+        echo "\">
+                                Déconnection
                             </a>
                         </li>
                     </ul>
@@ -68,6 +74,6 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  55 => 23,  42 => 13,  31 => 4,  28 => 3,);
     }
 }

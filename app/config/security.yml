@@ -45,7 +45,8 @@ security:
                 check_path: login_check
             logout:
                 path:   logout
-                target: /platform
+                target: /login
+                invalidate_session: false
     # with these settings you can restrict or allow access for different parts
     # of your application based on roles, ip, host or methods
     # http://symfony.com/doc/current/book/security.html#security-book-access-control-matching-options

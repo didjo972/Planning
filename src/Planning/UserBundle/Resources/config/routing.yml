@@ -12,15 +12,11 @@ index:
     
 planning:
     path:    /Planning
-    defaults: { _controller: PlanningUserBundle:Advert:planning }
+    defaults: { _controller: PlanningUserBundle:Planning:planning }
     
 essaie:
     path:    /ajouter
     defaults: { _controller: PlanningUserBundle:Cours:ajoutercours }
-    
-essaie2:
-    path:    /recuperer
-    defaults: { _controller: PlanningUserBundle:Cours:recuperercours }
     
 login:
     path:    /login

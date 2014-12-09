@@ -1,0 +1,42 @@
+Site:
+    type: entity
+    table: site
+    indexes:
+        fk_Site_salle1_idx:
+            columns:
+                - salle_idsalle
+    id:
+        idsite:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: idSite
+            generator:
+                strategy: IDENTITY
+    fields:
+        libell„©:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: libell√©
+        adresse:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+    manyToOne:
+        sallesalle:
+            targetEntity: Salle
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                salle_idsalle:
+                    referencedColumnName: idsalle
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

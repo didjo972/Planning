@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Promotion
  *
- * @ORM\Table(name="promotion")
+ * @ORM\Table(name="promotion", indexes={@ORM\Index(name="fk_promotion_eleve1_idx", columns={"eleve_ideleve"})})
  * @ORM\Entity
  */
 class Promotion
@@ -29,27 +29,15 @@ class Promotion
     private $numPromotion;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \Eleve
      *
-     * @ORM\ManyToMany(targetEntity="Classe", inversedBy="promotionpromotion")
-     * @ORM\JoinTable(name="promotion_has_classe",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="promotion_idpromotion", referencedColumnName="idpromotion")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="classe_idclasse", referencedColumnName="idclasse")
-     *   }
-     * )
+     * @ORM\ManyToOne(targetEntity="Eleve")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="eleve_ideleve", referencedColumnName="ideleve")
+     * })
      */
-    private $classeclasse;
+    private $eleveeleve;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->classeclasse = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 
     /**
@@ -86,35 +74,25 @@ class Promotion
     }
 
     /**
-     * Add classeclasse
+     * Set eleveeleve
      *
-     * @param \Planning\UserBundle\Entity\Classe $classeclasse
+     * @param \Planning\UserBundle\Entity\Eleve $eleveeleve
      * @return Promotion
      */
-    public function addClasseclasse(\Planning\UserBundle\Entity\Classe $classeclasse)
+    public function setEleveeleve(\Planning\UserBundle\Entity\Eleve $eleveeleve = null)
     {
-        $this->classeclasse[] = $classeclasse;
+        $this->eleveeleve = $eleveeleve;
 
         return $this;
     }
 
     /**
-     * Remove classeclasse
+     * Get eleveeleve
      *
-     * @param \Planning\UserBundle\Entity\Classe $classeclasse
+     * @return \Planning\UserBundle\Entity\Eleve 
      */
-    public function removeClasseclasse(\Planning\UserBundle\Entity\Classe $classeclasse)
+    public function getEleveeleve()
     {
-        $this->classeclasse->removeElement($classeclasse);
-    }
-
-    /**
-     * Get classeclasse
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getClasseclasse()
-    {
-        return $this->classeclasse;
+        return $this->eleveeleve;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Planning\UserBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -12,10 +13,11 @@ use Symfony\Component\Security\Core\SecurityContext;
  * @author Didjo'BG
  */
 class SecurityController extends Controller {
+    
     public function loginAction(Request $request) {
     // Si le visiteur est déjà identifié, on le redirige vers l'accueil
     if ($this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
-      return $this->redirect($this->generateUrl('oc_platform_accueil'));
+      return $this->redirect($this->generateUrl('accueil'));
     }
 
     $session = $request->getSession();
@@ -33,5 +35,10 @@ class SecurityController extends Controller {
       'last_username' => $session->get(SecurityContext::LAST_USERNAME),
       'error'         => $error,
     ));
+  }
+  
+  public function logoutAction() {
+      
+      return new Response('Vous avez été correctement déconnecté !');
   }
 }

@@ -19,9 +19,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 //use Doctrine\Common\Collections\Criteria;
 
 class PlanningController extends Controller {
-    public function rechercheretudiantAction($id) {
-        $Eleve = $this->getDoctrine()->getRepository('PlanningUserBundle:Eleve')->findAll();
+    public function planningAction() {
+        $Cours = $this->getDoctrine()->getRepository('PlanningUserBundle:Cours')->findAll();
         
-        return new Response('Id du produit retrouvé : '.$Eleve);
+        return $this->render('PlanningUserBundle:Advert:planning.html.twig', array('Cours' => $Cours));
+        //return new Response('Id du produit retrouvé : '.$Eleve);
     }
 }

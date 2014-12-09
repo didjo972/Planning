@@ -1791,7 +1791,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5485acd5119dd</argument>
+            <argument>5485c4eeea7dc</argument>
           </service>
         </argument>
         <argument type="service">
@@ -1977,7 +1977,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5485acd5119dd</argument>
+            <argument>5485c4eeea7dc</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2018,7 +2018,7 @@
             <argument type="service">
               <service class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
                 <argument type="service" id="security.http_utils"/>
-                <argument>/platform</argument>
+                <argument>/login</argument>
               </service>
             </argument>
             <argument type="collection">
@@ -2026,11 +2026,6 @@
               <argument key="intention">logout</argument>
               <argument key="logout_path">logout</argument>
             </argument>
-            <call method="addHandler">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
-              </argument>
-            </call>
           </service>
         </argument>
         <argument type="service">

@@ -148,17 +148,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // planning
         if ($pathinfo === '/Planning') {
-            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::planningAction',  '_route' => 'planning',);
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\PlanningController::planningAction',  '_route' => 'planning',);
         }
 
         // essaie
         if ($pathinfo === '/ajouter') {
             return array (  '_controller' => 'Planning\\UserBundle\\Controller\\CoursController::ajoutercoursAction',  '_route' => 'essaie',);
-        }
-
-        // essaie2
-        if ($pathinfo === '/recuperer') {
-            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\CoursController::recuperercoursAction',  '_route' => 'essaie2',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

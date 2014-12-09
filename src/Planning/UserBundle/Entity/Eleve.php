@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Eleve
  *
- * @ORM\Table(name="eleve")
+ * @ORM\Table(name="eleve", indexes={@ORM\Index(name="fk_eleve_user1_idx", columns={"user_id"})})
  * @ORM\Entity
  */
 class Eleve
@@ -34,6 +34,16 @@ class Eleve
      * @ORM\Column(name="nom", type="string", length=45, nullable=false)
      */
     private $nom;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
 
 
 
@@ -91,5 +101,28 @@ class Eleve
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Planning\UserBundle\Entity\User $user
+     * @return Eleve
+     */
+    public function setUser(\Planning\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Planning\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

@@ -31,9 +31,9 @@ class Salle
     /**
      * @var integer
      *
-     * @ORM\Column(name="occuper", type="integer", nullable=true)
+     * @ORM\Column(name="nb_PC", type="integer", nullable=true)
      */
-    private $occuper;
+    private $nbPc;
 
     /**
      * @var \Cours
@@ -81,26 +81,26 @@ class Salle
     }
 
     /**
-     * Set occuper
+     * Set nbPc
      *
-     * @param integer $occuper
+     * @param integer $nbPc
      * @return Salle
      */
-    public function setOccuper($occuper)
+    public function setNbPc($nbPc)
     {
-        $this->occuper = $occuper;
+        $this->nbPc = $nbPc;
 
         return $this;
     }
 
     /**
-     * Get occuper
+     * Get nbPc
      *
      * @return integer 
      */
-    public function getOccuper()
+    public function getNbPc()
     {
-        return $this->occuper;
+        return $this->nbPc;
     }
 
     /**

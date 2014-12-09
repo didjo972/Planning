@@ -1,6 +1,16 @@
 Cours:
     type: entity
     table: cours
+    indexes:
+        fk_cours_promotion1_idx:
+            columns:
+                - promotion_idpromotion
+        fk_cours_matière1_idx:
+            columns:
+                - matiere_idMatiere
+        fk_cours_professeur1_idx:
+            columns:
+                - professeur_idprofesseur
     id:
         idcours:
             type: integer
@@ -11,18 +21,6 @@ Cours:
             generator:
                 strategy: IDENTITY
     fields:
-        lieu:
-            type: string
-            nullable: true
-            length: 45
-            fixed: false
-            comment: ''
-        matiere:
-            type: string
-            nullable: true
-            length: 45
-            fixed: false
-            comment: ''
         dure:
             type: integer
             nullable: true
@@ -38,4 +36,32 @@ Cours:
             nullable: true
             comment: ''
             column: date_fin
+    manyToOne:
+        promotionpromotion:
+            targetEntity: Promotion
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                promotion_idpromotion:
+                    referencedColumnName: idpromotion
+            orphanRemoval: false
+        matierematiere:
+            targetEntity: Matiere
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                matiere_idMatiere:
+                    referencedColumnName: idMatiere
+            orphanRemoval: false
+        professeurprofesseur:
+            targetEntity: Professeur
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                professeur_idprofesseur:
+                    referencedColumnName: idprofesseur
+            orphanRemoval: false
     lifecycleCallbacks: {  }

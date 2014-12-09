@@ -1,0 +1,21 @@
+Matiere:
+    type: entity
+    table: matiere
+    id:
+        idmatiere:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: idMatiere
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelle:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

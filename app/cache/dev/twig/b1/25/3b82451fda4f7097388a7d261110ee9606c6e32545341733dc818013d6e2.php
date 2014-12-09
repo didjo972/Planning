@@ -33,12 +33,7 @@ class __TwigTemplate_b1253b82451fda4f7097388a7d261110ee9606c6e32545341733dc81801
         // line 4
         $this->env->loadTemplate("PlanningUserBundle:Advert:menu.html.twig")->display($context);
         // line 5
-        echo "        <form class=\"form\">
-            <div class=\"recherche\">
-\t\t<input type=\"text\" name=\"keyword\" />
-\t\t<button>ok</button>
-            </div>
-        </form>
+        echo "        
     </div>
 ";
     }
