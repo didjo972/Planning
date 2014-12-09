@@ -29,7 +29,11 @@ class __TwigTemplate_35456563e9af9000c5a0770a80d66a0dab8abc3b42289b64d4789c8b382
     {
         // line 3
         echo "    <div class=\"page\">
-        
+        ";
+        // line 4
+        $this->env->loadTemplate("PlanningUserBundle:Advert:menu.html.twig")->display($context);
+        // line 5
+        echo "        
     </div>
 ";
     }
@@ -46,6 +50,6 @@ class __TwigTemplate_35456563e9af9000c5a0770a80d66a0dab8abc3b42289b64d4789c8b382
 
     public function getDebugInfo()
     {
-        return array (  31 => 3,  28 => 2,);
+        return array (  36 => 5,  34 => 4,  31 => 3,  28 => 2,);
     }
 }

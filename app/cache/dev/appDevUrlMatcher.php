@@ -127,23 +127,18 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // hello-the-world
-        if ($pathinfo === '/hello-world') {
-            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::indexAction',  '_route' => 'hello-the-world',);
+        // index
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'index');
+            }
+
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::homeAction',  '_route' => 'index',);
         }
 
         // home
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'home');
-            }
-
-            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::homeAction',  '_route' => 'home',);
-        }
-
-        // index
         if ($pathinfo === '/Accueil') {
-            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::homeAction',  '_route' => 'index',);
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\AdvertController::homeAction',  '_route' => 'home',);
         }
 
         // planning

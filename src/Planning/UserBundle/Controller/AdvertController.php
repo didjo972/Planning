@@ -15,12 +15,6 @@ class AdvertController extends Controller{
     /**
      * @Template()
      */
-    public function indexAction() {
-        $cours = new \Planning\UserBundle\Entity\Cours();
-        $lieu = $cours->getLieu();
-        return $this->render('PlanningUserBundle:Advert:index.html.twig', array('lieu' => $lieu));
-        //return new Response("Veuillez vous connectez !");
-    }  
     
     public function homeAction() {
         return $this->render('PlanningUserBundle:Advert:accueil.html.twig');

@@ -44,29 +44,39 @@ class __TwigTemplate_01e984f874939cace8f368005101c70cfa881b68ed9ea4f8655572a9c61
   ";
         // line 12
         echo "  <div class=\"page\">
-      <!--<label for=\"INSTA\">CFA INSTA</label>-->
         <div class=\"page-content\">
+            <h5>CFA INSTA</h5>
             <div class=\"formulaire\">
-                Welcome !
-                <form action=\"";
+                <div id=\"form_wrapper\" class=\"form_wrapper\">
+                    <form class=\"login active\" action=\"";
         // line 17
         echo $this->env->getExtension('routing')->getPath("login_check");
         echo "\" method=\"post\">
-                    <table>
-                        <tr>
-                            <td><label for=\"username\">Utilisateur :</label></td>
-                            <td><input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+                        <h3>Login</h3>
+                        <div>
+                            <label>Utilisateur :</label>
+                            <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
         // line 21
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" style=\"max-width: 100px\"/></td>
-                        </tr>
-                        <tr>
-                            <td><label for=\"password\">Mot de passe :</label></td>
-                            <td><input type=\"password\" id=\"password\" name=\"_password\" style=\"max-width: 100px\" /></td>
-                        </tr>
-                    </table>
-                    <input class=\"bt-valider\" type=\"submit\" value=\"Connexion\" />    
-                </form>
+        echo "\" />
+                        </div>
+                        <div>
+                            <label>Mot de passe:
+                                <!--<a href=\"/MonProjetPhp/Planning/web/app_dev.php/mot_de_passe_perdu\" rel=\"forgot_password\" class=\"forgot linkform\">
+                                    Mot de passe oublié ?
+                                </a>-->
+                            </label>
+                        <input type=\"password\" id=\"password\" name=\"_password\" />
+                        </div>
+                        <div class=\"bottom\">
+                            <!--<div class=\"remember\"><input type=\"checkbox\" />
+                                <span>Sauvegarder mon mot de passe</span>
+                            </div>-->
+                            <input type=\"submit\" value=\"Connexion\"></input>
+                            <div class=\"clear\"></div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
   </div>

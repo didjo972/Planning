@@ -23,7 +23,7 @@ Eleve:
             comment: ''
         nom:
             type: string
-            nullable: false
+            nullable: true
             length: 45
             fixed: false
             comment: ''

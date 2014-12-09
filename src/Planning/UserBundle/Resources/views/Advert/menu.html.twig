@@ -1,11 +1,11 @@
 {# empty Twig template #}
-{% extends '::base.html.twig' %}
+{% extends '::base_accueil.html.twig' %}
 {% block body %}
             <div class="header_logo"></div>
                 <div class="menu">
                     <ul>
                         <li>
-                            <a href="/Accueil">
+                            <a href="{{ path('home') }}">
                                 Accueil
                             </a>
                         </li>

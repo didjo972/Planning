@@ -7,7 +7,7 @@ class __TwigTemplate_5a465bbe2fa2fd934c3bce0cfc7190539c6bdba691a1c0e124261400c6d
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::base.html.twig");
+        $this->parent = $this->env->loadTemplate("::base_accueil.html.twig");
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
@@ -16,7 +16,7 @@ class __TwigTemplate_5a465bbe2fa2fd934c3bce0cfc7190539c6bdba691a1c0e124261400c6d
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "::base_accueil.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -28,17 +28,22 @@ class __TwigTemplate_5a465bbe2fa2fd934c3bce0cfc7190539c6bdba691a1c0e124261400c6d
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "    <div class=\"mainheader\">
-            <div class=\"header_logo\"></div>
+        echo "            <div class=\"header_logo\"></div>
                 <div class=\"menu\">
                     <ul>
                         <li>
-                            <a href=\"/Accueil\">
+                            <a href=\"";
+        // line 8
+        echo $this->env->getExtension('routing')->getPath("home");
+        echo "\">
                                 Accueil
                             </a>
                         </li>
                         <li>
-                            <a href=\"/MonProjetPhp/Planning/web/app_dev.php/Planning\">
+                            <a href=\"";
+        // line 13
+        echo $this->env->getExtension('routing')->getPath("planning");
+        echo "\">
                                 Planning
                             </a>
                         </li>
@@ -48,14 +53,15 @@ class __TwigTemplate_5a465bbe2fa2fd934c3bce0cfc7190539c6bdba691a1c0e124261400c6d
                             </a>
                         </li>
                         <li>
-                            <a href=\"/Absence\">
-                                Absence
+                            <a href=\"";
+        // line 23
+        echo $this->env->getExtension('routing')->getPath("logout");
+        echo "\">
+                                Déconnection
                             </a>
                         </li>
                     </ul>
                 </div>
-            <div class=\"header_deco\"></div>
-        </div>
 ";
     }
 
@@ -71,6 +77,6 @@ class __TwigTemplate_5a465bbe2fa2fd934c3bce0cfc7190539c6bdba691a1c0e124261400c6d
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  58 => 23,  45 => 13,  37 => 8,  31 => 4,  28 => 3,);
     }
 }

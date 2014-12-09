@@ -1,12 +1,8 @@
-hello-the-world:
-    path:    /hello-world
-    defaults: { _controller: PlanningUserBundle:Advert:index }
-
-home:
+index:
     path:    /
     defaults: { _controller: PlanningUserBundle:Advert:home }
 
-index:
+home:
     path:    /Accueil
     defaults: { _controller: PlanningUserBundle:Advert:home }
     

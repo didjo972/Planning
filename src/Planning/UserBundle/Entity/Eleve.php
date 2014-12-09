@@ -31,7 +31,7 @@ class Eleve
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=45, nullable=false)
+     * @ORM\Column(name="nom", type="string", length=45, nullable=true)
      */
     private $nom;
 

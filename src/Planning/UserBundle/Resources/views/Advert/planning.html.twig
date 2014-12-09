@@ -2,8 +2,8 @@
 {% block body %}
     <div class="page">
         {% include ('PlanningUserBundle:Advert:menu.html.twig') %}
+
         <table>
-            <div class="page">
                 <tr>
                     <th>Nom du professeur</th>
                     <th>Matiere</th>
@@ -12,13 +12,12 @@
                     <th>Fin des cours</th>
                 </tr>
                 {% for entity in Cours %}
-                    <tr>
-                        <td>{{entity.professeurprofesseur.nom}}</td>
-                        <td>{{entity.matierematiere.libelle}}</td>
-                        <td>{{entity.dure}} h</td>
-                        <td>{{entity.dateDebut|date("Y-m-d")}}</td>
-                        <td>{{entity.dateFin|date("Y-m-d")}}</td>
-                    </tr>
+                    <td>{{entity.professeurprofesseur.nom}}</td>
+                    <td>{{entity.matierematiere.libelle}}</td>
+                    <td>{{entity.dure}} h</td>
+                    <td>{{entity.dateDebut|date("Y-m-d")}}</td>
+                    <td>{{entity.dateFin|date("Y-m-d")}}</td>
+                        
                 {% endfor %}
                 <tr>
                     <th>Lundi</th>
@@ -36,7 +35,6 @@
                         <td>{{entity.matierematiere.libelle}}</td>
                     </tr>
                 {% endfor %}
-           </div>
         </table>
     </div>
 {% endblock %}

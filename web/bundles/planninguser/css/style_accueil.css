@@ -7,6 +7,71 @@ and open the template in the editor.
     Created on : 5 déc. 2014, 11:07:59
     Author     : Nizaru
 */
+div.page
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: auto;
+    box-shadow: 0 0 10px #aaa;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family:"Trebuchet MS", "Myriad Pro", Arial, sans-serif;
+	font-size:14px;
+	background:#f4f4f4 url(../images/bg.gif) repeat top left;
+	color:#333;
+	text-shadow:1px 1px 1px #fff;
+	overflow-y:scroll;
+}
+h1{
+	font-size:56px;
+}
+h2{
+	font-size:20px;
+	padding:0px 0px 40px 0px;
+	color:#aaa;
+}
+h2 span{
+	color:#ffa800;
+}
+a{
+	color:#777;
+}
+a:hover{
+	color:#222;
+}
+p{
+	padding:5px 0px;
+}
+.wrapper{
+	width:960px;
+	margin:20px auto;
+	min-height:550px;
+}
+.box{
+	width:49%;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.clear{
+	clear:both;
+}
+a.back{
+	color:#777;
+	position:fixed;
+	top:5px;
+	right:10px;
+	text-decoration:none;
+}
 
 div.header_logo
 {

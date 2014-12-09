@@ -39,14 +39,11 @@ class __TwigTemplate_3d4fe1c56c9c90724627696667feb135f79d77979b3773e300a715a1d0a
     <body>
         ";
         // line 13
-        $this->env->loadTemplate("PlanningUserBundle:Advert:menu.html.twig")->display($context);
+        $this->displayBlock('body', $context, $blocks);
         // line 14
         echo "        ";
-        $this->displayBlock('body', $context, $blocks);
-        // line 15
-        echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 16
+        // line 15
         echo "    </body>
 </html>
 ";
@@ -72,12 +69,12 @@ class __TwigTemplate_3d4fe1c56c9c90724627696667feb135f79d77979b3773e300a715a1d0a
         ";
     }
 
-    // line 14
+    // line 13
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 15
+    // line 14
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -94,6 +91,6 @@ class __TwigTemplate_3d4fe1c56c9c90724627696667feb135f79d77979b3773e300a715a1d0a
 
     public function getDebugInfo()
     {
-        return array (  81 => 15,  76 => 14,  70 => 8,  65 => 7,  62 => 6,  56 => 5,  50 => 16,  47 => 15,  44 => 14,  42 => 13,  35 => 10,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  78 => 14,  73 => 13,  67 => 8,  62 => 7,  59 => 6,  53 => 5,  47 => 15,  44 => 14,  42 => 13,  35 => 10,  33 => 6,  29 => 5,  23 => 1,);
     }
 }
