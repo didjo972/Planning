@@ -172,6 +172,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // test
+        if ($pathinfo === '/test') {
+            return array (  '_controller' => 'Planning\\UserBundle\\Controller\\PlanningController::annuelAction',  '_route' => 'test',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

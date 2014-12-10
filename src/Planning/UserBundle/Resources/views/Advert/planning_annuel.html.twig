@@ -1,0 +1,66 @@
+{# empty Twig template #}
+{% extends '::base_planning.html.twig' %}
+{% block body %}
+    <div class="page">
+        {% include ('PlanningUserBundle:Advert:menu.html.twig') %}
+        <div class="page-content">
+            <table>
+            <tr>
+                <th>Janvier</th>
+                <th>Fevrier</th>
+                <th>Mars</th>
+                <th>Avril</th>
+                <th>Mai</th>
+                <th>Juin</th>
+                <th>Juillet</th>
+                <th>Aout</th>
+                <th>Septembre</th>
+                <th>Octobre</th>
+                <th>Novembre</th>
+                <th>Decembre</th>
+            </tr>
+
+                {% for ligne in 0..30 %}
+                    <tr>
+                        <td>
+                            {{jourjanvier+ligne}}
+                        </td>
+                        <td>
+                            {{jourfevrier+ligne}}
+                        </td>
+                        <td>
+                            {{jourmars+ligne}}
+                        </td>
+                        <td>
+                            {{jouravril+ligne}}
+                        </td>
+                        <td>
+                            {{jourmai+ligne}}
+                        </td>
+                        <td>
+                            {{jourjuin+ligne}}
+                        </td>
+                        <td>
+                            {{jourjuillet+ligne}}
+                        </td>
+                        <td>
+                            {{jouraout+ligne}}
+                        </td>
+                        <td>
+                            {{jourseptembre+ligne}}
+                        </td>
+                        <td>
+                            {{jouroctobre+ligne}}
+                        </td>
+                        <td>
+                            {{journovembre+ligne}}
+                         </td>
+                        <td>
+                            {{jourdecembre+ligne}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

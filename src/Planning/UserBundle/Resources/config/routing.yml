@@ -23,5 +23,8 @@ login_check:
 
 logout:
     path:    /logout
-
+    
+test:
+    path:    /test
+    defaults: { _controller: PlanningUserBundle:Planning:annuel}
     
