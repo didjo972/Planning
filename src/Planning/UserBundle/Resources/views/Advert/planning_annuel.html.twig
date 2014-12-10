@@ -19,20 +19,39 @@
                     <th>Novembre</th>
                     <th>Decembre</th>
                 </tr>
-
                 {% for ligne in 1..31 %}
                     <tr>
                         <td>{{jourjanvier+ligne}}</td>
-                        <td>{{jourfevrier+ligne}}</td>
+                        {% if ligne <= 28 %}
+                            <td>{{jourfevrier+ligne}}</td>
+                        {% else %}
+                            <td> </td>
+                        {% endif %}
                         <td>{{jourmars+ligne}}</td>
-                        <td>{{jouravril+ligne}}</td>
+                        {% if ligne <= 30 %}
+                            <td>{{jouravril+ligne}}</td>
+                        {% else %}
+                            <td> </td>
+                        {% endif %}
                         <td>{{jourmai+ligne}}</td>
-                        <td>{{jourjuin+ligne}}</td>
+                        {% if ligne <= 30 %}
+                            <td>{{jourjuin+ligne}}</td>
+                        {% else %}
+                            <td> </td>
+                        {% endif %}
                         <td>{{jourjuillet+ligne}}</td>
                         <td>{{jouraout+ligne}}</td>
-                        <td>{{jourseptembre+ligne}}</td>
+                        {% if ligne <= 30 %}
+                            <td>{{jourseptembre+ligne}}</td>
+                        {% else %}
+                            <td> </td>
+                        {% endif %}
                         <td>{{jouroctobre+ligne}}</td>
-                        <td>{{journovembre+ligne}}</td>
+                        {% if ligne <= 30 %}
+                            <td>{{journovembre+ligne}}</td>
+                        {% else %}
+                            <td> </td>
+                        {% endif %}
                         <td>{{jourdecembre+ligne}}</td>
                     </tr>
                 {% endfor %}
