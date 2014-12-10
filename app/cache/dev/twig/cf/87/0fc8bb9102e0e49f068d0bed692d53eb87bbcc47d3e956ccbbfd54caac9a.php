@@ -31,19 +31,19 @@ class __TwigTemplate_cf870fc8bb9102e0e49f068d0bed692d53eb87bbcc47d3e956ccbbfd54c
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 10
+        // line 9
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("logo.ico"), "html", null, true);
         echo "\" />
     </head>
     <body>
         ";
-        // line 13
+        // line 12
         $this->displayBlock('body', $context, $blocks);
-        // line 14
+        // line 13
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 17
+        // line 16
         echo "    </body>
 </html>
 ";
@@ -62,22 +62,18 @@ class __TwigTemplate_cf870fc8bb9102e0e49f068d0bed692d53eb87bbcc47d3e956ccbbfd54c
         echo "            <link href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/planninguser/css/style_planning.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
-            <link href=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/planninguser/css/style_menu.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\" type=\"text/css\" />
         ";
     }
 
-    // line 13
+    // line 12
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 14
+    // line 13
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 15
+        // line 14
         echo "            
         ";
     }
@@ -94,6 +90,6 @@ class __TwigTemplate_cf870fc8bb9102e0e49f068d0bed692d53eb87bbcc47d3e956ccbbfd54c
 
     public function getDebugInfo()
     {
-        return array (  81 => 15,  78 => 14,  73 => 13,  67 => 8,  62 => 7,  59 => 6,  53 => 5,  47 => 17,  44 => 14,  42 => 13,  35 => 10,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  77 => 14,  74 => 13,  69 => 12,  62 => 7,  59 => 6,  53 => 5,  47 => 16,  44 => 13,  42 => 12,  35 => 9,  33 => 6,  29 => 5,  23 => 1,);
     }
 }

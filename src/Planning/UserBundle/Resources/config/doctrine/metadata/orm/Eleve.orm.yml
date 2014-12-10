@@ -5,6 +5,9 @@ Eleve:
         fk_eleve_user1_idx:
             columns:
                 - user_id
+        fk_eleve_promotion1_idx:
+            columns:
+                - promotion_idpromotion
     id:
         ideleve:
             type: integer
@@ -36,5 +39,14 @@ Eleve:
             joinColumns:
                 user_id:
                     referencedColumnName: id
+            orphanRemoval: false
+        promotionpromotion:
+            targetEntity: Promotion
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                promotion_idpromotion:
+                    referencedColumnName: idpromotion
             orphanRemoval: false
     lifecycleCallbacks: {  }

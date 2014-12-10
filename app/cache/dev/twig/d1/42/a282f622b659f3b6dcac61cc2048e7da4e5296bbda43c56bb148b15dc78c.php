@@ -7,7 +7,7 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::base.html.twig");
+        $this->parent = $this->env->loadTemplate("::base_accueil.html.twig");
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
@@ -16,7 +16,7 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "::base_accueil.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -32,7 +32,10 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
                 <div class=\"menu\">
                     <ul>
                         <li>
-                            <a href=\"/Accueil\">
+                            <a href=\"";
+        // line 8
+        echo $this->env->getExtension('routing')->getPath("home");
+        echo "\">
                                 Accueil
                             </a>
                         </li>
@@ -74,6 +77,6 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
 
     public function getDebugInfo()
     {
-        return array (  55 => 23,  42 => 13,  31 => 4,  28 => 3,);
+        return array (  58 => 23,  45 => 13,  37 => 8,  31 => 4,  28 => 3,);
     }
 }

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Promotion
  *
- * @ORM\Table(name="promotion", indexes={@ORM\Index(name="fk_promotion_eleve1_idx", columns={"eleve_ideleve"})})
+ * @ORM\Table(name="promotion")
  * @ORM\Entity
  */
 class Promotion
@@ -27,16 +27,6 @@ class Promotion
      * @ORM\Column(name="num_promotion", type="integer", nullable=true)
      */
     private $numPromotion;
-
-    /**
-     * @var \Eleve
-     *
-     * @ORM\ManyToOne(targetEntity="Eleve")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="eleve_ideleve", referencedColumnName="ideleve")
-     * })
-     */
-    private $eleveeleve;
 
 
 
@@ -71,28 +61,5 @@ class Promotion
     public function getNumPromotion()
     {
         return $this->numPromotion;
-    }
-
-    /**
-     * Set eleveeleve
-     *
-     * @param \Planning\UserBundle\Entity\Eleve $eleveeleve
-     * @return Promotion
-     */
-    public function setEleveeleve(\Planning\UserBundle\Entity\Eleve $eleveeleve = null)
-    {
-        $this->eleveeleve = $eleveeleve;
-
-        return $this;
-    }
-
-    /**
-     * Get eleveeleve
-     *
-     * @return \Planning\UserBundle\Entity\Eleve 
-     */
-    public function getEleveeleve()
-    {
-        return $this->eleveeleve;
     }
 }

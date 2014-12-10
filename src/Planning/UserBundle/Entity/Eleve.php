@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Eleve
  *
- * @ORM\Table(name="eleve", indexes={@ORM\Index(name="fk_eleve_user1_idx", columns={"user_id"})})
+ * @ORM\Table(name="eleve", indexes={@ORM\Index(name="fk_eleve_user1_idx", columns={"user_id"}), @ORM\Index(name="fk_eleve_promotion1_idx", columns={"promotion_idpromotion"})})
  * @ORM\Entity
  */
 class Eleve
@@ -44,6 +44,16 @@ class Eleve
      * })
      */
     private $user;
+
+    /**
+     * @var \Promotion
+     *
+     * @ORM\ManyToOne(targetEntity="Promotion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="promotion_idpromotion", referencedColumnName="idpromotion")
+     * })
+     */
+    private $promotionpromotion;
 
 
 
@@ -124,5 +134,28 @@ class Eleve
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set promotionpromotion
+     *
+     * @param \Planning\UserBundle\Entity\Promotion $promotionpromotion
+     * @return Eleve
+     */
+    public function setPromotionpromotion(\Planning\UserBundle\Entity\Promotion $promotionpromotion = null)
+    {
+        $this->promotionpromotion = $promotionpromotion;
+
+        return $this;
+    }
+
+    /**
+     * Get promotionpromotion
+     *
+     * @return \Planning\UserBundle\Entity\Promotion 
+     */
+    public function getPromotionpromotion()
+    {
+        return $this->promotionpromotion;
     }
 }

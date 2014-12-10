@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Salle
  *
- * @ORM\Table(name="salle", indexes={@ORM\Index(name="fk_salle_cours1_idx", columns={"cours_idcours"})})
+ * @ORM\Table(name="salle", indexes={@ORM\Index(name="fk_salle_cours1_idx", columns={"cours_idcours"}), @ORM\Index(name="fk_salle_site1_idx", columns={"site_idSite"})})
  * @ORM\Entity
  */
 class Salle
@@ -44,6 +44,16 @@ class Salle
      * })
      */
     private $courscours;
+
+    /**
+     * @var \Site
+     *
+     * @ORM\ManyToOne(targetEntity="Site")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="site_idSite", referencedColumnName="idSite")
+     * })
+     */
+    private $sitesite;
 
 
 
@@ -124,5 +134,28 @@ class Salle
     public function getCourscours()
     {
         return $this->courscours;
+    }
+
+    /**
+     * Set sitesite
+     *
+     * @param \Planning\UserBundle\Entity\Site $sitesite
+     * @return Salle
+     */
+    public function setSitesite(\Planning\UserBundle\Entity\Site $sitesite = null)
+    {
+        $this->sitesite = $sitesite;
+
+        return $this;
+    }
+
+    /**
+     * Get sitesite
+     *
+     * @return \Planning\UserBundle\Entity\Site 
+     */
+    public function getSitesite()
+    {
+        return $this->sitesite;
     }
 }

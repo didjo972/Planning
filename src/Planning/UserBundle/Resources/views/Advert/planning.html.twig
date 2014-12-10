@@ -11,14 +11,13 @@
                     <th>Début des cours</th>
                     <th>Fin des cours</th>
                 </tr>
-                {% for entity in Cours %}
-                    <td>{{entity.professeurprofesseur.nom}}</td>
-                    <td>{{entity.matierematiere.libelle}}</td>
-                    <td>{{entity.dure}} h</td>
-                    <td>{{entity.dateDebut|date("Y-m-d")}}</td>
-                    <td>{{entity.dateFin|date("Y-m-d")}}</td>
-                        
-                {% endfor %}
+                    <td>{{Cours.professeurprofesseur.nom}}</td>
+                    <td>{{Cours.matierematiere.libelle}}</td>
+                    <td>{{Cours.dure}} h</td>
+                    <td>{{Cours.dateDebut|date("Y-m-d")}}</td>
+                    <td>{{Cours.dateFin|date("Y-m-d")}}</td>
+        </table>
+        <table>
                 <tr>
                     <th>Lundi</th>
                     <th>Mardi</th>
@@ -26,15 +25,13 @@
                     <th>Jeudi</th>
                     <th>Vendredi</th>
                 </tr>
-                {% for entity in Cours %}
-                    <tr>
-                        <td>{{entity.matierematiere.libelle}}</td>
-                        <td>{{entity.matierematiere.libelle}}</td>
-                        <td>{{entity.matierematiere.libelle}}</td>
-                        <td>{{entity.matierematiere.libelle}}</td>
-                        <td>{{entity.matierematiere.libelle}}</td>
-                    </tr>
-                {% endfor %}
+                <tr>
+                    <td>{{Cours.matierematiere.libelle}}</td>
+                    <td>{{Cours.matierematiere.libelle}}</td>
+                    <td>{{Cours.matierematiere.libelle}}</td>
+                    <td>{{Cours.matierematiere.libelle}}</td>
+                    <td>{{Cours.matierematiere.libelle}}</td>
+                </tr>
         </table>
     </div>
 {% endblock %}

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Cours
  *
- * @ORM\Table(name="cours", indexes={@ORM\Index(name="fk_cours_promotion1_idx", columns={"promotion_idpromotion"}), @ORM\Index(name="fk_cours_matière1_idx", columns={"matiere_idMatiere"}), @ORM\Index(name="fk_cours_professeur1_idx", columns={"professeur_idprofesseur"})})
+ * @ORM\Table(name="cours", indexes={@ORM\Index(name="fk_cours_matière1_idx", columns={"matiere_idMatiere"}), @ORM\Index(name="fk_cours_professeur1_idx", columns={"professeur_idprofesseur"}), @ORM\Index(name="fk_cours_promotion1_idx", columns={"promotion_idpromotion"})})
  * @ORM\Entity
  */
 class Cours
@@ -43,16 +43,6 @@ class Cours
     private $dateFin;
 
     /**
-     * @var \Promotion
-     *
-     * @ORM\ManyToOne(targetEntity="Promotion")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="promotion_idpromotion", referencedColumnName="idpromotion")
-     * })
-     */
-    private $promotionpromotion;
-
-    /**
      * @var \Matiere
      *
      * @ORM\ManyToOne(targetEntity="Matiere")
@@ -71,6 +61,16 @@ class Cours
      * })
      */
     private $professeurprofesseur;
+
+    /**
+     * @var \Promotion
+     *
+     * @ORM\ManyToOne(targetEntity="Promotion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="promotion_idpromotion", referencedColumnName="idpromotion")
+     * })
+     */
+    private $promotionpromotion;
 
 
 
@@ -154,29 +154,6 @@ class Cours
     }
 
     /**
-     * Set promotionpromotion
-     *
-     * @param \Planning\UserBundle\Entity\Promotion $promotionpromotion
-     * @return Cours
-     */
-    public function setPromotionpromotion(\Planning\UserBundle\Entity\Promotion $promotionpromotion = null)
-    {
-        $this->promotionpromotion = $promotionpromotion;
-
-        return $this;
-    }
-
-    /**
-     * Get promotionpromotion
-     *
-     * @return \Planning\UserBundle\Entity\Promotion 
-     */
-    public function getPromotionpromotion()
-    {
-        return $this->promotionpromotion;
-    }
-
-    /**
      * Set matierematiere
      *
      * @param \Planning\UserBundle\Entity\Matiere $matierematiere
@@ -220,5 +197,28 @@ class Cours
     public function getProfesseurprofesseur()
     {
         return $this->professeurprofesseur;
+    }
+
+    /**
+     * Set promotionpromotion
+     *
+     * @param \Planning\UserBundle\Entity\Promotion $promotionpromotion
+     * @return Cours
+     */
+    public function setPromotionpromotion(\Planning\UserBundle\Entity\Promotion $promotionpromotion = null)
+    {
+        $this->promotionpromotion = $promotionpromotion;
+
+        return $this;
+    }
+
+    /**
+     * Get promotionpromotion
+     *
+     * @return \Planning\UserBundle\Entity\Promotion 
+     */
+    public function getPromotionpromotion()
+    {
+        return $this->promotionpromotion;
     }
 }

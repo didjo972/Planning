@@ -14,15 +14,16 @@
 
 namespace Planning\UserBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-//use Doctrine\Common\Collections\Criteria;
 
 class PlanningController extends Controller {
     public function planningAction() {
-        $Cours = $this->getDoctrine()->getRepository('PlanningUserBundle:Cours')->findAll();
-        
+        $Promotion = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Promotion')
+                ->findOneBy(array('numPromotion'=>'1'));
+        $Cours = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Cours')
+                ->findOneBy(array('promotionpromotion'=>$Promotion->getIdpromotion()));
         return $this->render('PlanningUserBundle:Advert:planning.html.twig', array('Cours' => $Cours));
-        //return new Response('Id du produit retrouvé : '.$Eleve);
     }
 }

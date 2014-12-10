@@ -1,10 +1,6 @@
 Promotion:
     type: entity
     table: promotion
-    indexes:
-        fk_promotion_eleve1_idx:
-            columns:
-                - eleve_ideleve
     id:
         idpromotion:
             type: integer
@@ -21,14 +17,4 @@ Promotion:
             unsigned: false
             comment: ''
             column: num_promotion
-    manyToOne:
-        eleveeleve:
-            targetEntity: Eleve
-            cascade: {  }
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                eleve_ideleve:
-                    referencedColumnName: ideleve
-            orphanRemoval: false
     lifecycleCallbacks: {  }

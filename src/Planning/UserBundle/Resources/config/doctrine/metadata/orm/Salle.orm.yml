@@ -5,6 +5,9 @@ Salle:
         fk_salle_cours1_idx:
             columns:
                 - cours_idcours
+        fk_salle_site1_idx:
+            columns:
+                - site_idSite
     id:
         idsalle:
             type: integer
@@ -36,5 +39,14 @@ Salle:
             joinColumns:
                 cours_idcours:
                     referencedColumnName: idcours
+            orphanRemoval: false
+        sitesite:
+            targetEntity: Site
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                site_idSite:
+                    referencedColumnName: idSite
             orphanRemoval: false
     lifecycleCallbacks: {  }
