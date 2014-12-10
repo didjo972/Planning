@@ -7,3 +7,15 @@ and open the template in the editor.
     Created on : 5 déc. 2014, 15:36:51
     Author     : Nizaru
 */
+table
+{
+  border-collapse : collapse;
+}
+
+th,td
+{
+  border : 1px solid black;
+  width : 80px;
+  height : 20px;
+  text-align : center;
+}
