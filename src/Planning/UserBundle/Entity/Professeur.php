@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Professeur
  *
- * @ORM\Table(name="professeur", indexes={@ORM\Index(name="fk_professeur_user1_idx", columns={"user_id"})})
+ * @ORM\Table(name="professeur")
  * @ORM\Entity
  */
 class Professeur
@@ -34,16 +34,6 @@ class Professeur
      * @ORM\Column(name="nom", type="string", length=255, nullable=false)
      */
     private $nom;
-
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     * })
-     */
-    private $user;
 
 
 
@@ -101,28 +91,5 @@ class Professeur
     public function getNom()
     {
         return $this->nom;
-    }
-
-    /**
-     * Set user
-     *
-     * @param \Planning\UserBundle\Entity\User $user
-     * @return Professeur
-     */
-    public function setUser(\Planning\UserBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \Planning\UserBundle\Entity\User 
-     */
-    public function getUser()
-    {
-        return $this->user;
     }
 }

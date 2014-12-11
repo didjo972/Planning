@@ -18,9 +18,6 @@ use Planning\UserBundle\Entity\Cours;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\EntityManager;
-
 class CoursController extends Controller{
     
     /**Ajouter un cours dans la base de donnée**/

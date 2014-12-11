@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Salle
  *
- * @ORM\Table(name="salle", indexes={@ORM\Index(name="fk_salle_cours1_idx", columns={"cours_idcours"}), @ORM\Index(name="fk_salle_site1_idx", columns={"site_idSite"})})
+ * @ORM\Table(name="salle")
  * @ORM\Entity
  */
 class Salle
@@ -34,26 +34,6 @@ class Salle
      * @ORM\Column(name="nb_PC", type="integer", nullable=true)
      */
     private $nbPc;
-
-    /**
-     * @var \Cours
-     *
-     * @ORM\ManyToOne(targetEntity="Cours")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cours_idcours", referencedColumnName="idcours")
-     * })
-     */
-    private $courscours;
-
-    /**
-     * @var \Site
-     *
-     * @ORM\ManyToOne(targetEntity="Site")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="site_idSite", referencedColumnName="idSite")
-     * })
-     */
-    private $sitesite;
 
 
 
@@ -111,51 +91,5 @@ class Salle
     public function getNbPc()
     {
         return $this->nbPc;
-    }
-
-    /**
-     * Set courscours
-     *
-     * @param \Planning\UserBundle\Entity\Cours $courscours
-     * @return Salle
-     */
-    public function setCourscours(\Planning\UserBundle\Entity\Cours $courscours = null)
-    {
-        $this->courscours = $courscours;
-
-        return $this;
-    }
-
-    /**
-     * Get courscours
-     *
-     * @return \Planning\UserBundle\Entity\Cours 
-     */
-    public function getCourscours()
-    {
-        return $this->courscours;
-    }
-
-    /**
-     * Set sitesite
-     *
-     * @param \Planning\UserBundle\Entity\Site $sitesite
-     * @return Salle
-     */
-    public function setSitesite(\Planning\UserBundle\Entity\Site $sitesite = null)
-    {
-        $this->sitesite = $sitesite;
-
-        return $this;
-    }
-
-    /**
-     * Get sitesite
-     *
-     * @return \Planning\UserBundle\Entity\Site 
-     */
-    public function getSitesite()
-    {
-        return $this->sitesite;
     }
 }

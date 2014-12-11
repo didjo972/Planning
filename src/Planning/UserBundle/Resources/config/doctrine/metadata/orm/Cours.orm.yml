@@ -1,16 +1,6 @@
 Cours:
     type: entity
     table: cours
-    indexes:
-        fk_cours_matière1_idx:
-            columns:
-                - matiere_idMatiere
-        fk_cours_professeur1_idx:
-            columns:
-                - professeur_idprofesseur
-        fk_cours_promotion1_idx:
-            columns:
-                - promotion_idpromotion
     id:
         idcours:
             type: integer
@@ -36,32 +26,4 @@ Cours:
             nullable: true
             comment: ''
             column: date_fin
-    manyToOne:
-        matierematiere:
-            targetEntity: Matiere
-            cascade: {  }
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                matiere_idMatiere:
-                    referencedColumnName: idMatiere
-            orphanRemoval: false
-        professeurprofesseur:
-            targetEntity: Professeur
-            cascade: {  }
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                professeur_idprofesseur:
-                    referencedColumnName: idprofesseur
-            orphanRemoval: false
-        promotionpromotion:
-            targetEntity: Promotion
-            cascade: {  }
-            mappedBy: null
-            inversedBy: null
-            joinColumns:
-                promotion_idpromotion:
-                    referencedColumnName: idpromotion
-            orphanRemoval: false
     lifecycleCallbacks: {  }
