@@ -35,6 +35,17 @@ class Salle
      */
     private $nbPc;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Planning\UserBundle\Entity\Site", cascade={"persist"})
+     * @ORM\JoinColumn(referencedColumnName="idSite")
+     */
+    private $siteidsite;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Planning\UserBundle\Entity\Cours", cascade={"persist"})
+     * @ORM\JoinColumn(referencedColumnName="idcours")
+     */
+    private $coursidcours;
 
 
     /**
@@ -91,5 +102,51 @@ class Salle
     public function getNbPc()
     {
         return $this->nbPc;
+    }
+
+    /**
+     * Set siteidsite
+     *
+     * @param \Planning\UserBundle\Entity\Site $siteidsite
+     * @return Salle
+     */
+    public function setSiteidsite(\Planning\UserBundle\Entity\Site $siteidsite = null)
+    {
+        $this->siteidsite = $siteidsite;
+
+        return $this;
+    }
+
+    /**
+     * Get siteidsite
+     *
+     * @return \Planning\UserBundle\Entity\Site 
+     */
+    public function getSiteidsite()
+    {
+        return $this->siteidsite;
+    }
+
+    /**
+     * Set coursidcours
+     *
+     * @param \Planning\UserBundle\Entity\Cours $coursidcours
+     * @return Salle
+     */
+    public function setCoursidcours(\Planning\UserBundle\Entity\Cours $coursidcours = null)
+    {
+        $this->coursidcours = $coursidcours;
+
+        return $this;
+    }
+
+    /**
+     * Get coursidcours
+     *
+     * @return \Planning\UserBundle\Entity\Cours 
+     */
+    public function getCoursidcours()
+    {
+        return $this->coursidcours;
     }
 }

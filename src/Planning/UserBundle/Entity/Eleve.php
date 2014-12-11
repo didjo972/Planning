@@ -34,8 +34,18 @@ class Eleve
      * @ORM\Column(name="nom", type="string", length=45, nullable=true)
      */
     private $nom;
-
-
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Planning\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $useriduser;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Planning\UserBundle\Entity\Promotion", cascade={"persist"})
+     * @ORM\JoinColumn(referencedColumnName="idpromotion")
+     */
+    private $promotionidpromotion;
 
     /**
      * Get ideleve
@@ -91,5 +101,51 @@ class Eleve
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set useriduser
+     *
+     * @param \Planning\UserBundle\Entity\User $useriduser
+     * @return Eleve
+     */
+    public function setUseriduser(\Planning\UserBundle\Entity\User $useriduser)
+    {
+        $this->useriduser = $useriduser;
+
+        return $this;
+    }
+
+    /**
+     * Get useriduser
+     *
+     * @return \Planning\UserBundle\Entity\User 
+     */
+    public function getUseriduser()
+    {
+        return $this->useriduser;
+    }
+
+    /**
+     * Set promotionidpromotion
+     *
+     * @param \Planning\UserBundle\Entity\Promotion $promotionidpromotion
+     * @return Eleve
+     */
+    public function setPromotionidpromotion(\Planning\UserBundle\Entity\Promotion $promotionidpromotion = null)
+    {
+        $this->promotionidpromotion = $promotionidpromotion;
+
+        return $this;
+    }
+
+    /**
+     * Get promotionidpromotion
+     *
+     * @return \Planning\UserBundle\Entity\Promotion 
+     */
+    public function getPromotionidpromotion()
+    {
+        return $this->promotionidpromotion;
     }
 }

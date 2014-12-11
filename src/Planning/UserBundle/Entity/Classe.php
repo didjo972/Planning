@@ -28,20 +28,6 @@ class Classe
      */
     private $libelle;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Promotion", mappedBy="classeclasse")
-     */
-    private $promotionpromotion;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->promotionpromotion = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 
     /**
@@ -75,38 +61,5 @@ class Classe
     public function getLibelle()
     {
         return $this->libelle;
-    }
-
-    /**
-     * Add promotionpromotion
-     *
-     * @param \Planning\UserBundle\Entity\Promotion $promotionpromotion
-     * @return Classe
-     */
-    public function addPromotionpromotion(\Planning\UserBundle\Entity\Promotion $promotionpromotion)
-    {
-        $this->promotionpromotion[] = $promotionpromotion;
-
-        return $this;
-    }
-
-    /**
-     * Remove promotionpromotion
-     *
-     * @param \Planning\UserBundle\Entity\Promotion $promotionpromotion
-     */
-    public function removePromotionpromotion(\Planning\UserBundle\Entity\Promotion $promotionpromotion)
-    {
-        $this->promotionpromotion->removeElement($promotionpromotion);
-    }
-
-    /**
-     * Get promotionpromotion
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPromotionpromotion()
-    {
-        return $this->promotionpromotion;
     }
 }

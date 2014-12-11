@@ -34,7 +34,12 @@ class Professeur
      * @ORM\Column(name="nom", type="string", length=255, nullable=false)
      */
     private $nom;
-
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Planning\UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $useriduser;
 
 
     /**
@@ -91,5 +96,28 @@ class Professeur
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set useriduser
+     *
+     * @param \Planning\UserBundle\Entity\User $useriduser
+     * @return Professeur
+     */
+    public function setUseriduser(\Planning\UserBundle\Entity\User $useriduser)
+    {
+        $this->useriduser = $useriduser;
+
+        return $this;
+    }
+
+    /**
+     * Get useriduser
+     *
+     * @return \Planning\UserBundle\Entity\User 
+     */
+    public function getUseriduser()
+    {
+        return $this->useriduser;
     }
 }

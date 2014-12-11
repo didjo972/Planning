@@ -6,9 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * User
- *
- * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_2DA17977F85E0677", columns={"username"})})
  * @ORM\Entity
  */
 class User extends BaseUser
@@ -21,4 +18,14 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $id;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }
