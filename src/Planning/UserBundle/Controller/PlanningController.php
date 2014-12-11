@@ -27,30 +27,15 @@ class PlanningController extends Controller {
         return $this->render('PlanningUserBundle:Advert:planning.html.twig', array('Cours' => $Cours));
     }
     public function annuelAction(){
-        $jourjanvier = 0;
-        $jourfevrier = 0;
-        $jourmars = 0;
-        $jouravril = 0;
-        $jourmai = 0;
-        $jourjuin = 0;
-        $jourjuillet = 0;
-        $jouraout = 0;
-        $jourseptembre = 0;
-        $jouroctobre = 0;
-        $journovembre = 0;
-        $jourdecembre = 0;
+        
+        $Promotion = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Promotion')
+                ->findOneBy(array('numPromotion'=>'1',));
+        $Cours = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Cours')
+                ->findBy(array('promotionpromotion'=>$Promotion->getIdpromotion()));
 
-        return $this->render('PlanningUserBundle:Advert:planning_annuel.html.twig', array('jourjanvier' => $jourjanvier,
-                                                                                          'jourfevrier' => $jourfevrier,
-                                                                                          'jourmars' => $jourmars,
-                                                                                          'jouravril' => $jouravril,
-                                                                                          'jourmai' => $jourmai,
-                                                                                          'jourjuin' => $jourjuin,
-                                                                                          'jourjuillet' => $jourjuillet,
-                                                                                          'jouraout' => $jouraout,
-                                                                                          'jourseptembre' => $jourseptembre,
-                                                                                          'jouroctobre' => $jouroctobre,
-                                                                                          'journovembre' => $journovembre,
-                                                                                          'jourdecembre' => $jourdecembre));
+        return $this->render('PlanningUserBundle:Advert:planning_annuel.html.twig', array('Cours' => $Cours,
+                                                                                          'Promotion' => $Promotion));
     }
 }

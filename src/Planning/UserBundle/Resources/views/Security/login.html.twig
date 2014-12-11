@@ -1,43 +1,40 @@
-{# empty Twig template #}
+{% extends '::layout.html.twig' %}
 
-{% extends '::base.html.twig' %}
-{% block body %}
+{% trans_default_domain 'FOSUserBundle' %}
 
-  {# S'il y a une erreur, on l'affiche dans un joli cadre #}
-  {% if error %}
-    <div class="alert alert-danger">{{ error.message }}</div>
-  {% endif %}
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<div class="page">
+    <div class="page-content">
+    <h5>CFA INSTA</h5>
+    <div class="formulaire">
+        <div id="form_wrapper" class="form_wrapper">
+            <form action="{{ path("fos_user_security_check") }}" method="post" class="login active">
+                <h3>Login</h3>
+                <div>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-  {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
-  <div class="page">
-        <div class="page-content">
-            <h5>CFA INSTA</h5>
-            <div class="formulaire">
-                <div id="form_wrapper" class="form_wrapper">
-                    <form class="login active" action="{{ path ('login_check') }}" method="post">
-                        <h3>Login</h3>
-                        <div>
-                            <label>Utilisateur :</label>
-                            <input type="text" id="username" name="_username" value="{{ last_username }}" />
-                        </div>
-                        <div>
-                            <label>Mot de passe:
-                                <!--<a href="/MonProjetPhp/Planning/web/app_dev.php/mot_de_passe_perdu" rel="forgot_password" class="forgot linkform">
-                                    Mot de passe oublié ?
-                                </a>-->
-                            </label>
-                        <input type="password" id="password" name="_password" />
-                        </div>
-                        <div class="bottom">
-                            <!--<div class="remember"><input type="checkbox" />
-                                <span>Sauvegarder mon mot de passe</span>
-                            </div>-->
-                            <input type="submit" value="Connexion"></input>
-                            <div class="clear"></div>
-                        </div>
-                    </form>
+                    <label for="username">Utilisateur :</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
                 </div>
-            </div>
+                <div>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="_password" required="required" />
+                    <div class="bottom">
+                        <div class="remember">
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            <span for="remember_me">{{ 'security.login.remember_me'|trans }}</span>
+                        </div>
+                        <input type="submit" id="_submit" name="_submit" value="Connexion" />
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </form>
         </div>
-  </div>
-{% endblock %}
+    </div>
+</div>
+</div>
+
+{% endblock fos_user_content %}

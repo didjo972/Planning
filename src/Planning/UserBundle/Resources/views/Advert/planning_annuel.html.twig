@@ -4,55 +4,63 @@
     <div class="page">
         {% include ('PlanningUserBundle:Advert:menu.html.twig') %}
         <div class="page-content">
+            <div class="titre-content">
+                Promotion N°{{Promotion.numPromotion}}
+            </div> 
             <table>
-                <tr>
-                    <th>Janvier</th>
-                    <th>Fevrier</th>
-                    <th>Mars</th>
-                    <th>Avril</th>
-                    <th>Mai</th>
-                    <th>Juin</th>
-                    <th>Juillet</th>
-                    <th>Aout</th>
-                    <th>Septembre</th>
-                    <th>Octobre</th>
-                    <th>Novembre</th>
-                    <th>Decembre</th>
-                </tr>
-                {% for ligne in 1..31 %}
+                {% for ligne in 1..32 %}
                     <tr>
-                        <td>{{jourjanvier+ligne}}</td>
-                        {% if ligne <= 28 %}
-                            <td>{{jourfevrier+ligne}}</td>
-                        {% else %}
-                            <td> </td>
-                        {% endif %}
-                        <td>{{jourmars+ligne}}</td>
-                        {% if ligne <= 30 %}
-                            <td>{{jouravril+ligne}}</td>
-                        {% else %}
-                            <td> </td>
-                        {% endif %}
-                        <td>{{jourmai+ligne}}</td>
-                        {% if ligne <= 30 %}
-                            <td>{{jourjuin+ligne}}</td>
-                        {% else %}
-                            <td> </td>
-                        {% endif %}
-                        <td>{{jourjuillet+ligne}}</td>
-                        <td>{{jouraout+ligne}}</td>
-                        {% if ligne <= 30 %}
-                            <td>{{jourseptembre+ligne}}</td>
-                        {% else %}
-                            <td> </td>
-                        {% endif %}
-                        <td>{{jouroctobre+ligne}}</td>
-                        {% if ligne <= 30 %}
-                            <td>{{journovembre+ligne}}</td>
-                        {% else %}
-                            <td> </td>
-                        {% endif %}
-                        <td>{{jourdecembre+ligne}}</td>
+                        {% for colonne in 1..13 %}
+                            <th>
+                                {% if ligne==1 and colonne==2 %}
+                                    Janvier
+                                {% endif %}
+                                {% if ligne==1 and colonne==3 %}
+                                    Fevrier
+                                {% endif %}
+                                {% if ligne==1 and colonne==4 %}
+                                    Mars
+                                {% endif %}
+                                {% if ligne==1 and colonne==5 %}
+                                    Avril
+                                {% endif %}
+                                {% if ligne==1 and colonne==6 %}
+                                    Mai
+                                {% endif %}
+                                {% if ligne==1 and colonne==7 %}
+                                    Juin
+                                {% endif %}
+                                {% if ligne==1 and colonne==8 %}
+                                    Juillet
+                                {% endif %}
+                                {% if ligne==1 and colonne==9 %}
+                                    Aout
+                                {% endif %}
+                                {% if ligne==1 and colonne==10 %}
+                                    Septembre
+                                {% endif %}
+                                {% if ligne==1 and colonne==11 %}
+                                    Ocotbre
+                                {% endif %}
+                                {% if ligne==1 and colonne==12 %}
+                                    Novembre
+                                {% endif %}
+                                {% if ligne==1 and colonne==13 %}
+                                    Decembre
+                                {% endif %}
+                                
+                                {%for entity in Cours %}
+                                    {% if entity.dateDebut|date("m")==colonne-1 and entity.dateFin|date("d")>=ligne-1 and entity.dateDebut|date("d")<=ligne-1 %}
+                                        {{entity.matierematiere.libelle}}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for i in 2..32 %}
+                                    {% if ligne==i and colonne==1 %}
+                                        {{ligne-1}}
+                                    {% endif %}
+                                {% endfor %}
+                            </th>
+                        {% endfor %}
                     </tr>
                 {% endfor %}
             </table>

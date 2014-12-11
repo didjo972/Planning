@@ -14,16 +14,6 @@ essaie:
     path:    /ajouter
     defaults: { _controller: PlanningUserBundle:Cours:ajoutercours }
     
-login:
-    path:    /login
-    defaults: { _controller: PlanningUserBundle:Security:login }
-    
-login_check:
-    path:    /login_check
-
-logout:
-    path:    /logout
-    
 test:
     path:    /test
     defaults: { _controller: PlanningUserBundle:Planning:annuel}
