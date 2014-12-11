@@ -5,7 +5,7 @@
         {% include ('PlanningUserBundle:Advert:menu.html.twig') %}
         <div class="page-content">
             <div class="titre-content">
-                Promotion N°{{Promotion.numPromotion}}
+                Promotion N°{{Promotion}}
             </div> 
             <table>
                 {% for ligne in 1..32 %}
@@ -51,7 +51,7 @@
                                 
                                 {%for entity in Cours %}
                                     {% if entity.dateDebut|date("m")==colonne-1 and entity.dateFin|date("d")>=ligne-1 and entity.dateDebut|date("d")<=ligne-1 %}
-                                        {{entity.matierematiere.libelle}}
+                                        {{entity.matiereidmatiere.libelle}}
                                     {% endif %}
                                 {% endfor %}
                                 {% for i in 2..32 %}

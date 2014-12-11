@@ -7,15 +7,24 @@ and open the template in the editor.
     Created on : 5 déc. 2014, 15:36:51
     Author     : Nizaru
 */
+div.page-content {
+  //display: inline-flex;
+}
+
+div.page-content .titre-content {
+    text-align: center;
+}
+
 table
 {
   border-collapse : collapse;
+  font-size: 10px;
 }
 
 th,td
 {
   border : 1px solid black;
-  width : 80px;
-  height : 20px;
+  width : 70px;
+  height : 15px;
   text-align : center;
 }
