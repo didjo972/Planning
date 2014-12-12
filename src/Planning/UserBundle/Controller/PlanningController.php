@@ -74,4 +74,8 @@ class PlanningController extends Controller {
                                                                                           'Promotion' => $Promotion));
         }
     }
+    
+    public function gestionpromoAction() {
+        return $this->render('PlanningUserBundle:Advert:gestion_promotion.html.twig');
+    }
 }

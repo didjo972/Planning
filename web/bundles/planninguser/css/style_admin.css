@@ -58,8 +58,10 @@ div.page-content
 	background:#404040;
 }
 #menu div a:hover, #menu div a:active, #menu div a:focus{
+        display:block;
 	background:#ca0003;
         transition: background 0s;
+        transition: width 2s ease;
 }
 .sousmenu{
 	position:absolute;
@@ -71,6 +73,33 @@ div.page-content
 	width:600px;
 	border:1px solid #abc;
 	float:left;
+}
+.formulaire-content {
+/*    margin-left: 300px;
+    margin-right: 300px;*/
+}
+.formulaire-content form {
+    text-align: center;
+    padding-top: 150px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+input {
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.bt-envoyer {
+    width: auto;
+    background-color: #A44040;
+}
+
+.bt-envoyer:hover {
+    width: auto;
+    background-color: #E54C4C;
 }
 /*
 ul li{

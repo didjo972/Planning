@@ -1,0 +1,21 @@
+{% extends '::base_admin.html.twig' %}
+{% block body %}
+    <div class="page">
+        <div class="page-content">
+            {#action="traitement.php"#}
+            <div class="formulaire-content">
+                <form method="post">
+                    <fieldset>
+                <p>
+                <legend>Ajouter une Promotion</legend>
+                <label>Numéro de promotion</label>
+                <input type="text" style="width: 200px;"/> 
+                <br>
+                <input class="bt-envoyer" type="submit" value="Envoyer" />
+                </p>
+                    </fieldset>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
