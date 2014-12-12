@@ -1,22 +1,22 @@
 <?php
 
-/* PlanningUserBundle:Security:login.html.twig */
+/* FOSUserBundle:Security:login.html.twig */
 class __TwigTemplate_2cb96fc540cb813ac7a32789cf202907da5f80e97163adddbf3eeebd62772d1f extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::base.html.twig");
+        $this->parent = $this->env->loadTemplate("::layout.html.twig");
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'fos_user_content' => array($this, 'block_fos_user_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -24,68 +24,67 @@ class __TwigTemplate_2cb96fc540cb813ac7a32789cf202907da5f80e97163adddbf3eeebd627
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
-    public function block_body($context, array $blocks = array())
+    // line 5
+    public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 5
-        echo "
-  ";
-        // line 7
-        echo "  ";
+        // line 6
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 8
-            echo "    <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "message", array()), "html", null, true);
+            // line 7
+            echo "    <div>";
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageKey", array()), $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageData", array()), "security"), "html", null, true);
             echo "</div>
-  ";
+";
         }
-        // line 10
-        echo "
-  ";
-        // line 12
-        echo "  <div class=\"page\">
-        <div class=\"page-content\">
-            <h5>CFA INSTA</h5>
-            <div class=\"formulaire\">
-                <div id=\"form_wrapper\" class=\"form_wrapper\">
-                    <form class=\"login active\" action=\"";
+        // line 9
+        echo "<div class=\"page\">
+    <div class=\"page-content\">
+    <h5>CFA INSTA</h5>
+    <div class=\"formulaire\">
+        <div id=\"form_wrapper\" class=\"form_wrapper\">
+            <form action=\"";
+        // line 14
+        echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
+        echo "\" method=\"post\" class=\"login active\">
+                <h3>Login</h3>
+                <div>
+                    <input type=\"hidden\" name=\"_csrf_token\" value=\"";
         // line 17
-        echo $this->env->getExtension('routing')->getPath("login_check");
-        echo "\" method=\"post\">
-                        <h3>Login</h3>
-                        <div>
-                            <label>Utilisateur :</label>
-                            <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 21
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
         echo "\" />
-                        </div>
-                        <div>
-                            <label>Mot de passe:
-                                <!--<a href=\"/MonProjetPhp/Planning/web/app_dev.php/mot_de_passe_perdu\" rel=\"forgot_password\" class=\"forgot linkform\">
-                                    Mot de passe oublié ?
-                                </a>-->
-                            </label>
-                        <input type=\"password\" id=\"password\" name=\"_password\" />
-                        </div>
-                        <div class=\"bottom\">
-                            <!--<div class=\"remember\"><input type=\"checkbox\" />
-                                <span>Sauvegarder mon mot de passe</span>
-                            </div>-->
-                            <input type=\"submit\" value=\"Connexion\"></input>
-                            <div class=\"clear\"></div>
-                        </div>
-                    </form>
+
+                    <label for=\"username\">Utilisateur :</label>
+                    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 20
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
+        echo "\" required=\"required\" />
                 </div>
-            </div>
+                <div>
+                    <label for=\"password\">Mot de passe :</label>
+                    <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
+                    <div class=\"bottom\">
+                        <div class=\"remember\">
+                            <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
+                            <span for=\"remember_me\">";
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
+        echo "</span>
+                        </div>
+                        <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"Connexion\" />
+                        <div class=\"clear\"></div>
+                    </div>
+                </div>
+            </form>
         </div>
-  </div>
+    </div>
+</div>
+</div>
+
 ";
     }
 
     public function getTemplateName()
     {
-        return "PlanningUserBundle:Security:login.html.twig";
+        return "FOSUserBundle:Security:login.html.twig";
     }
 
     public function isTraitable()
@@ -95,6 +94,6 @@ class __TwigTemplate_2cb96fc540cb813ac7a32789cf202907da5f80e97163adddbf3eeebd627
 
     public function getDebugInfo()
     {
-        return array (  60 => 21,  53 => 17,  46 => 12,  43 => 10,  37 => 8,  34 => 7,  31 => 5,  28 => 4,);
+        return array (  69 => 28,  58 => 20,  52 => 17,  46 => 14,  39 => 9,  33 => 7,  31 => 6,  28 => 5,);
     }
 }

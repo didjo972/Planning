@@ -64,10 +64,10 @@ class Professeur extends \Planning\UserBundle\Entity\Professeur implements \Doct
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'idprofesseur', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'prenom', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'nom', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'user');
+            return array('__isInitialized__', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'idprofesseur', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'prenom', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'nom', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'useriduser');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'idprofesseur', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'prenom', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'nom', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'user');
+        return array('__isInitialized__', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'idprofesseur', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'prenom', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'nom', '' . "\0" . 'Planning\\UserBundle\\Entity\\Professeur' . "\0" . 'useriduser');
     }
 
     /**
@@ -235,23 +235,23 @@ class Professeur extends \Planning\UserBundle\Entity\Professeur implements \Doct
     /**
      * {@inheritDoc}
      */
-    public function setUser(\Planning\UserBundle\Entity\User $user = NULL)
+    public function setUseriduser(\Planning\UserBundle\Entity\User $useriduser)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUser', array($user));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUseriduser', array($useriduser));
 
-        return parent::setUser($user);
+        return parent::setUseriduser($useriduser);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getUser()
+    public function getUseriduser()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUser', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUseriduser', array());
 
-        return parent::getUser();
+        return parent::getUseriduser();
     }
 
 }

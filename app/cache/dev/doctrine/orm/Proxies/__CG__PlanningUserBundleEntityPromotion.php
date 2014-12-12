@@ -64,10 +64,10 @@ class Promotion extends \Planning\UserBundle\Entity\Promotion implements \Doctri
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'idpromotion', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'numPromotion', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'eleveeleve');
+            return array('__isInitialized__', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'idpromotion', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'numPromotion');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'idpromotion', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'numPromotion', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'eleveeleve');
+        return array('__isInitialized__', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'idpromotion', '' . "\0" . 'Planning\\UserBundle\\Entity\\Promotion' . "\0" . 'numPromotion');
     }
 
     /**
@@ -208,28 +208,6 @@ class Promotion extends \Planning\UserBundle\Entity\Promotion implements \Doctri
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNumPromotion', array());
 
         return parent::getNumPromotion();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setEleveeleve(\Planning\UserBundle\Entity\Eleve $eleveeleve = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEleveeleve', array($eleveeleve));
-
-        return parent::setEleveeleve($eleveeleve);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getEleveeleve()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEleveeleve', array());
-
-        return parent::getEleveeleve();
     }
 
 }

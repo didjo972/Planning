@@ -53,13 +53,31 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
                             </a>
                         </li>
                         <li>
-                            <a href=\"";
-        // line 23
-        echo $this->env->getExtension('routing')->getPath("logout");
-        echo "\">
-                                Déconnection
-                            </a>
-                        </li>
+                            ";
+        // line 26
+        echo "                                
+                                ";
+        // line 27
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 28
+            echo "                ";
+            // line 29
+            echo "                <a href=\"";
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\">
+                    Se Déconnecter
+                </a>
+            ";
+        } else {
+            // line 33
+            echo "                <a href=\"";
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\">Se Connecter";
+            echo "</a>
+            ";
+        }
+        // line 35
+        echo "                        </li>
                     </ul>
                 </div>
 ";
@@ -77,6 +95,6 @@ class __TwigTemplate_d142a282f622b659f3b6dcac61cc2048e7da4e5296bbda43c56bb148b15
 
     public function getDebugInfo()
     {
-        return array (  58 => 23,  45 => 13,  37 => 8,  31 => 4,  28 => 3,);
+        return array (  80 => 35,  73 => 33,  65 => 29,  63 => 28,  61 => 27,  58 => 26,  45 => 13,  37 => 8,  31 => 4,  28 => 3,);
     }
 }
