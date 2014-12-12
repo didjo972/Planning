@@ -52,12 +52,14 @@ div.page-content
 	padding-top:3px;
 	height:50px;
 	display:block;
+        transition: background 0.5s;
 }
 #menu div a:link, #menu div a:visited{
 	background:#404040;
 }
 #menu div a:hover, #menu div a:active, #menu div a:focus{
 	background:#ca0003;
+        transition: background 0s;
 }
 .sousmenu{
 	position:absolute;
@@ -70,7 +72,7 @@ div.page-content
 	border:1px solid #abc;
 	float:left;
 }
-
+/*
 ul li{
      background:linear-gradient(#90C, #8600B3);
 }
@@ -91,4 +93,4 @@ ul li:first-child{
 
 ul li:last-child{
      border-radius: 0px 0px 20px 0px;
-}
+}*/
