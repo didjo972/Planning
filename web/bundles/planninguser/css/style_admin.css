@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12 déc. 2014, 11:54:49
+    Author     : Nizaru
+*/
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.page
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: auto;
+    background: #FFFFFF
+}
+div.page-content
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1250px;
+    height: 755px;
+    box-shadow: 0 0 10px #aaa;
+    background: #EEEEEE
+}
+
+#menu{
+	margin:150px 0 0 0px;
+	background:#0f0;
+	color:#fff;
+	float:left;
+	display:inline;
+}
+#menu div{
+	width:400px;
+}
+.menu{
+	position:relative;
+}
+#menu div a:link, #menu div a:visited, #menu div a:hover{
+	color:#fff;
+	font-family:arial,sans-serif;
+	font-size:20px;
+	text-decoration:none;
+	padding-top:3px;
+	height:50px;
+	display:block;
+}
+#menu div a:link, #menu div a:visited{
+	background:#404040;
+}
+#menu div a:hover, #menu div a:active, #menu div a:focus{
+	background:#ca0003;
+}
+.sousmenu{
+	position:absolute;
+	left:400px;
+	top:0;
+}
+#content{
+	margin:20px 0 0 10px;
+	width:600px;
+	border:1px solid #abc;
+	float:left;
+}

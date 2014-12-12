@@ -1,0 +1,27 @@
+{% extends '::base_admin.html.twig' %}
+{% block body %}
+    <div class="page">
+        <div class="page-content">
+                <div id="menu">
+                    <div class="menu" id="menu1" onmouseover="affiche(this)">
+                        <a href="#">Gestion promotion</a>
+                        <div class="sousmenu" id="sousmenu1" style="display:none" onmouseout="affiche(this)">
+                            <div><a href="#">BTS</a></div>
+                            <div><a href="#">BAC +4</a></div>
+                            <div><a href="#">BAC +5</a></div>
+                        </div>
+                    </div>
+                    <div class="menu" id="menu2" onmouseover="affiche(this)">
+                        <a href="#">Gestion planning</a>
+                        <div class="sousmenu" id="sousmenu2" style="display:none" onmouseout="affiche(this)">
+                            <div><a href="#">BTS</a></div>
+                            <div><a href="#">BAC +4</a></div>
+                            <div><a href="#">BAC +5</a></div>
+                        </div>
+                    </div>
+                    <div class="menu" id="menu3" onmouseover="affiche(this)"><a href="#">Créer un cour</a></div>
+                    <div class="menu" id="menu4" onmouseover="affiche(this)"><a href="#">Ajouté un élève ou un professeur</a></div>
+                </div>  
+        </div>
+    </div>
+{% endblock %}

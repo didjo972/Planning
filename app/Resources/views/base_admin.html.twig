@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}CFA INSTA{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/planninguser/css/style_admin.css') }}" rel="stylesheet" type="text/css" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('logo.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('bundles/planninguser/js/functions.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
