@@ -29,29 +29,23 @@ class PlanningController extends Controller {
     }
     public function annuelAction(){
         // Pour charger un utilisateur
-        $connexion = $this->get('security.context')->getToken()->getUser();
-        echo $connexion;
-        //TODO Résoudre le problème de récupération du User
-//        $User = $this->getDoctrine()
-//                ->getRepository('PlanningUserBundle:User')
-//                ->findOneBy(array('username'=>$connexion));
-//        echo $User->getId();
-//        $Eleve = $this->getDoctrine()
-//                ->getRepository('PlanningUserBundle:Eleve')
-//                ->findOneBy(array('useriduser'=>$User));
-//        echo $Eleve;
-//        $Promotion = $this->getDoctrine()
-//                ->getRepository('PlanningUserBundle:Promotion')
-//                ->findOneBy(array('numPromotion'=>$Eleve->promotionidpromotion()));
-//        echo $Promotion;
-//        $Cours = $this->getDoctrine()
-//                ->getRepository('PlanningUserBundle:Cours')
-//                ->findBy(array('promotionpromotion'=>$Promotion->getNumPromotion()));
-        
+        $idConnexion = $this->get('security.context')->getToken()->getUser()->getId();
+        echo $idConnexion;
+        $User = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:User')
+                ->findOneBy(array('id'=>$idConnexion));
+        echo $User->getId();
+        $Eleve = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Eleve')
+                ->findOneBy(array('useriduser'=>$User->getId()));
+        echo $Eleve->getPrenom();
+        $Promotion = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Promotion')
+                ->findOneBy(array('idpromotion'=>$Eleve->getPromotionidpromotion()));
+        echo $Promotion->getNumPromotion();
         $Cours = $this->getDoctrine()
                 ->getRepository('PlanningUserBundle:Cours')
                 ->findBy(array('promotionidpromotion'=>$Promotion->getIdpromotion()));
-        $Promotion = 1;
 
         return $this->render('PlanningUserBundle:Advert:planning_annuel.html.twig', array('Cours' => $Cours,
                                                                                           'Promotion' => $Promotion));
