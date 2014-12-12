@@ -1,10 +1,10 @@
 index:
     path:    /
-    defaults: { _controller: PlanningUserBundle:Planning:annuel }
+    defaults: { _controller: PlanningUserBundle:Planning:accueil }
 
 home:
     path:    /Accueil
-    defaults: { _controller: PlanningUserBundle:Planning:annuel }
+    defaults: { _controller: PlanningUserBundle:Planning:accueil }
     
 planning:
     path:    /Planning

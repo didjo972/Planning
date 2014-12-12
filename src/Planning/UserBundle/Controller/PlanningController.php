@@ -15,6 +15,7 @@
 namespace Planning\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class PlanningController extends Controller {
     public function planningAction() {        
@@ -27,10 +28,20 @@ class PlanningController extends Controller {
                 ->findOneBy(array('promotionpromotion'=>$Promotion->getIdpromotion()));
         return $this->render('PlanningUserBundle:Advert:planning.html.twig', array('Cours' => $Cours));
     }
-    public function annuelAction(){
+    public function accueilAction(){
         // Pour charger un utilisateur
         $idConnexion = $this->get('security.context')->getToken()->getUser()->getId();
-        echo $idConnexion;
+        // On récupère la liste des rôles d'un utilisateur
+        $roles = $this->get('security.context')->getToken()->getRoles();
+        // On transforme le tableau d'instance en tableau simple
+        $rolesTab = array_map(function($role){ 
+          return $role->getRole(); 
+        }, $roles);
+        // S'il s'agit d'un admin ou d'un utilisateur on le redirige vers la page administrateur ou la page utilisateur
+        if (in_array('ROLE_ADMIN', $rolesTab, true)) {
+            return new Response('Tu es ADMINISTRATEUR');            
+        } else {
+            echo $idConnexion;
         $User = $this->getDoctrine()
                 ->getRepository('PlanningUserBundle:User')
                 ->findOneBy(array('id'=>$idConnexion));
@@ -49,5 +60,6 @@ class PlanningController extends Controller {
 
         return $this->render('PlanningUserBundle:Advert:planning_annuel.html.twig', array('Cours' => $Cours,
                                                                                           'Promotion' => $Promotion));
+        }
     }
 }
