@@ -41,24 +41,36 @@ class PlanningController extends Controller {
         if (in_array('ROLE_ADMIN', $rolesTab, true)) {
             return new Response('Tu es ADMINISTRATEUR');            
         } else {
-            echo $idConnexion;
-        $User = $this->getDoctrine()
-                ->getRepository('PlanningUserBundle:User')
-                ->findOneBy(array('id'=>$idConnexion));
-        echo $User->getId();
-        $Eleve = $this->getDoctrine()
-                ->getRepository('PlanningUserBundle:Eleve')
-                ->findOneBy(array('useriduser'=>$User->getId()));
-        echo $Eleve->getPrenom();
-        $Promotion = $this->getDoctrine()
-                ->getRepository('PlanningUserBundle:Promotion')
-                ->findOneBy(array('idpromotion'=>$Eleve->getPromotionidpromotion()));
-        echo $Promotion->getNumPromotion();
-        $Cours = $this->getDoctrine()
-                ->getRepository('PlanningUserBundle:Cours')
-                ->findBy(array('promotionidpromotion'=>$Promotion->getIdpromotion()));
+            //echo $idConnexion;
+            $User = $this->getDoctrine()
+                        ->getRepository('PlanningUserBundle:User')
+                        ->findOneBy(array('id'=>$idConnexion));
+            if(is_null($User) || !isset($User)) {
+                throw $this->createNotFoundException('L\'utilisateur n\'existe pas !');
+            }
+            //echo $User->getId();
+            $Eleve = $this->getDoctrine()
+                          ->getRepository('PlanningUserBundle:Eleve')
+                          ->findOneBy(array('useriduser'=>$User->getId()));
+            if(is_null($Eleve) || !isset($Eleve)) {
+                throw $this->createNotFoundException('Aucun élève correpondant à votre id Utilisateur !');
+            }
+            //echo $Eleve->getPrenom();
+            $Promotion = $this->getDoctrine()
+                              ->getRepository('PlanningUserBundle:Promotion')
+                              ->findOneBy(array('idpromotion'=>$Eleve->getPromotionidpromotion()));
+            if(is_null($Promotion->getNumPromotion()) || !isset($Promotion)) {
+                throw $this->createNotFoundException('Aucune promotion lié à l\'élève demandé !');
+            }
+            //echo $Promotion->getNumPromotion();
+            $Cours = $this->getDoctrine()
+                        ->getRepository('PlanningUserBundle:Cours')
+                        ->findBy(array('promotionidpromotion'=>$Promotion->getIdpromotion()));
+            if(is_null($Cours) || !isset($Cours)) {
+                throw $this->createNotFoundException('Aucun cours trouvé pour la promotion demandé');
+            }
 
-        return $this->render('PlanningUserBundle:Advert:planning_annuel.html.twig', array('Cours' => $Cours,
+            return $this->render('PlanningUserBundle:Advert:planning_annuel.html.twig', array('Cours' => $Cours,
                                                                                           'Promotion' => $Promotion));
         }
     }
