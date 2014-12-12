@@ -2,7 +2,7 @@
 {% block body %}
     <div class="page">
         <div class="page-content">
-                <div id="menu">
+                {#<div id="menu">
                     <div class="menu" id="menu1" onmouseover="affiche(this)">
                         <a href="#">Gestion promotion</a>
                         <div class="sousmenu" id="sousmenu1" style="display:none" onmouseout="affiche(this)">
@@ -21,7 +21,27 @@
                     </div>
                     <div class="menu" id="menu3" onmouseover="affiche(this)"><a href="#">Créer un cour</a></div>
                     <div class="menu" id="menu4" onmouseover="affiche(this)"><a href="#">Ajouté un élève ou un professeur</a></div>
-                </div>  
+                </div> #}
+                <div id="menu">
+                    <div class="menu" id="menu1" onmouseover="affiche(this)">
+                        <ul>
+                            <li><a href="#">Gestion Promotion</a>
+                            <ul>
+                                <li><a href="#">BTS</a></li>
+                                <li><a href="#">BAC +4</a></li>
+                                <li><a href="#">BAC +5</a></li>
+                            </ul>
+                            </li><!--
+                         --><li><a href="#">Gestion Planning</a>
+                            <ul>
+                                <li><a href="#">BTS</a></li>
+                                <li><a href="#">BAC +4</a></li>
+                                <li><a href="#">BAC +5</a></li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
         </div>
     </div>
 {% endblock %}
