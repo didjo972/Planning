@@ -39,7 +39,7 @@ class PlanningController extends Controller {
         }, $roles);
         // S'il s'agit d'un admin ou d'un utilisateur on le redirige vers la page administrateur ou la page utilisateur
         if (in_array('ROLE_ADMIN', $rolesTab, true)) {
-            return new Response('Tu es ADMINISTRATEUR');            
+            return $this->render('PlanningUserBundle:Advert:admin.html.twig');            
         } else {
             //echo $idConnexion;
             $User = $this->getDoctrine()
