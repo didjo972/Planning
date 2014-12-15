@@ -79,7 +79,13 @@ class PlanningController extends Controller {
         $Promotion = $this->getDoctrine()
                 ->getRepository('PlanningUserBundle:Promotion')
                 ->findAll();
-        return $this->render('PlanningUserBundle:Advert:gestion_promotion.html.twig', array('Promotion' => $Promotion));
+//        $Nbeleve = $this->getDoctrine()
+//                ->getRepository('PlanningUserBundle:Eleve')
+//                ->findBy(array('promotionidpromotion' => $Promotion->getIdpromotion()));
+//        echo $Nbeleve->getIdeleve();
+        $Nbeleve = 3;
+        return $this->render('PlanningUserBundle:Advert:gestion_promotion.html.twig', array('Promotion' => $Promotion,
+                                                                                            'Nbeleve' => $Nbeleve));
     }
     
     public function gestionprofesseurAction() {
