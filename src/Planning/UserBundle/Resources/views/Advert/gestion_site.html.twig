@@ -1,0 +1,33 @@
+{% extends '::base_admin.html.twig' %}
+{% block body %}
+    <div class="page">
+        <div class="page-content">
+            {#action="traitement.php"#}
+            
+            <table class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Libellé</th>
+                        <th>Adresse</th>
+                    </tr>
+                </thead>
+ 
+                <tfoot>
+                    <tr>
+                        <th>Libellé</th>
+                        <th>Adresse</th>
+                    </tr>
+                </tfoot>
+ 
+                <tbody>
+                    {% for entity in Site %}
+                        <tr>
+                            <td>{{entity.libelle}}</td>
+                            <td>{{entity.adresse}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

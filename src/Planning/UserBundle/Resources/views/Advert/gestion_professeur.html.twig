@@ -1,0 +1,36 @@
+{% extends '::base_admin.html.twig' %}
+{% block body %}
+    <div class="page">
+        <div class="page-content">
+            {#action="traitement.php"#}
+            
+            <table class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Id User</th>
+                    </tr>
+                </thead>
+ 
+                <tfoot>
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Id User</th>
+                    </tr>
+                </tfoot>
+ 
+                <tbody>
+                    {% for entity in Professeur %}
+                        <tr>
+                            <td>{{entity.prenom}}</td>
+                            <td>{{entity.nom}}</td>
+                            <td>{{entity.idprofesseur}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

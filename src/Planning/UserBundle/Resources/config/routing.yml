@@ -21,3 +21,23 @@ test:
 gestion_promo:
     path:    /g_promo
     defaults: { _controller: PlanningUserBundle:Planning:gestionpromo}
+    
+gestion_professeur:
+    path:    /g_professeur
+    defaults: { _controller: PlanningUserBundle:Planning:gestionprofesseur}
+    
+gestion_eleve:
+    path:    /g_eleve
+    defaults: { _controller: PlanningUserBundle:Planning:gestioneleve}
+    
+gestion_matiere:
+    path:    /g_matiere
+    defaults: { _controller: PlanningUserBundle:Planning:gestionmatiere}
+    
+gestion_site:
+    path:    /g_site
+    defaults: { _controller: PlanningUserBundle:Planning:gestionsite}
+    
+gestion_salle:
+    path:    /g_salle
+    defaults: { _controller: PlanningUserBundle:Planning:gestionsalle}

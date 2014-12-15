@@ -1,0 +1,30 @@
+{% extends '::base_admin.html.twig' %}
+{% block body %}
+    <div class="page">
+        <div class="page-content">
+            {#action="traitement.php"#}
+            
+            <table class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Libellé</th>
+                    </tr>
+                </thead>
+ 
+                <tfoot>
+                    <tr>
+                        <th>Libellé</th>
+                    </tr>
+                </tfoot>
+ 
+                <tbody>
+                    {% for entity in Matiere %}
+                        <tr>
+                            <td>{{entity.libelle}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

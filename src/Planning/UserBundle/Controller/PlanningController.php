@@ -76,6 +76,44 @@ class PlanningController extends Controller {
     }
     
     public function gestionpromoAction() {
-        return $this->render('PlanningUserBundle:Advert:gestion_promotion.html.twig');
+        $Promotion = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Promotion')
+                ->findAll();
+        return $this->render('PlanningUserBundle:Advert:gestion_promotion.html.twig', array('Promotion' => $Promotion));
+    }
+    
+    public function gestionprofesseurAction() {
+        $Professeur = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Professeur')
+                ->findAll();
+        return $this->render('PlanningUserBundle:Advert:gestion_professeur.html.twig', array('Professeur' => $Professeur));
+    }
+    
+    public function gestioneleveAction() {
+        $Eleve = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Eleve')
+                ->findAll();
+        return $this->render('PlanningUserBundle:Advert:gestion_eleve.html.twig', array('Eleve' => $Eleve));
+    }
+    
+    public function gestionmatiereAction() {
+        $Matiere = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Matiere')
+                ->findAll();
+        return $this->render('PlanningUserBundle:Advert:gestion_matiere.html.twig', array('Matiere' => $Matiere));
+    }
+    
+    public function gestionsiteAction() {
+        $Site = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Site')
+                ->findAll();
+        return $this->render('PlanningUserBundle:Advert:gestion_site.html.twig', array('Site' => $Site));
+    }
+    
+    public function gestionsalleAction() {
+        $Salle = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:Salle')
+                ->findAll();
+        return $this->render('PlanningUserBundle:Advert:gestion_salle.html.twig', array('Salle' => $Salle));
     }
 }

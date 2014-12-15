@@ -1,0 +1,45 @@
+{% extends '::base_admin.html.twig' %}
+{% block body %}
+    <div class="page">
+        <div class="page-content">
+            {#action="traitement.php"#}
+            
+            <table class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Nnuméro de Salle</th>
+                        <th>Nombre de PC</th>
+                        <th>Libellé du Cours</th>
+                        <th>Id du Cours</th>
+                        {#<th>Id User</th>
+                        <th>N° de promotion</th>#}
+                    </tr>
+                </thead>
+ 
+                <tfoot>
+                    <tr>
+                        <th>Nnuméro de Salle</th>
+                        <th>Nombre de PC</th>
+                        <th>Libellé du Cours</th>
+                        <th>Id du Cours</th>
+                        {#<th>Id User</th>
+                        <th>N° de promotion</th>#}
+                    </tr>
+                </tfoot>
+ 
+                <tbody>
+                    {% for entity in Salle %}
+                        <tr>
+                            <td>{{entity.numSalle}}</td>
+                            <td>{{entity.nbPc}}</td>
+                            <td>{{siteidsite.libelle}}</td>
+                            <td>{{coursidcours.idcours}}</td>
+                            {#<td>{{entity.useriduser.id}}</td>
+                            <td>{{entity.promotionidpromotion.numPromotion}}</td>#}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -87,39 +87,35 @@ div.page-content
 
 input {
     text-align: center;
-    -moz-border-radius: 5px;
+/*    -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    border-radius: 5px;
+   border-radius: 5px;*/
 }
 
 .bt-envoyer {
-    width: auto;
-    background-color: #A44040;
+    border: 1px solid #656565;
+    background: #F46767;
+    color:#FE0000;
+    box-shadow: 0px 0px 10px #343434;
+    width: 100px;
+    height: 25px;
 }
 
 .bt-envoyer:hover {
-    width: auto;
-    background-color: #E54C4C;
-}
-/*
-ul li{
-     background:linear-gradient(#90C, #8600B3);
+    background: #FE0000;
+    color: #F46767;
 }
 
-ul li a{
-     background: #666;
-     transition: background 0.5s;
+.bt-annuler {
+    border: 1px solid #656565;
+    background: #FE0000;
+    color: #F46767;
+    box-shadow: 0px 0px 10px #343434;
+    width: 100px;
+    height: 25px;
 }
 
-ul li a:hover{
-     background: transparent;
-     transition: background 0s;
+.bt-annuler:hover {
+    background: #F46767;
+    color: #FE0000
 }
-
-ul li:first-child{
-     border-radius: 0px 20px 0px 0px;
-}
-
-ul li:last-child{
-     border-radius: 0px 0px 20px 0px;
-}*/
