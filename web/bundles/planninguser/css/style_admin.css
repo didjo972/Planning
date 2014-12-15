@@ -9,8 +9,8 @@ and open the template in the editor.
 */
 
 *{
-	margin:0;
-	padding:0;
+    margin:0;
+    padding:0;
 }
 
 .page
@@ -21,101 +21,14 @@ and open the template in the editor.
     height: auto;
     background: #FFFFFF
 }
-div.page-content
+
+.page-content
 {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1250px;
-    height: 755px;
+    width: 950px;
+    height: auto;
     box-shadow: 0 0 10px #aaa;
-    background: #EEEEEE
-}
-
-#menu{
-	margin:150px 0 0 0px;
-	background:#0f0;
-	color:#fff;
-	float:left;
-	display:inline;
-}
-#menu div{
-	width:400px;
-}
-.menu{
-	position:relative;
-}
-#menu div a:link, #menu div a:visited, #menu div a:hover{
-	color:#fff;
-	font-family:arial,sans-serif;
-	font-size:20px;
-	text-decoration:none;
-	padding-top:3px;
-	height:50px;
-	display:block;
-        transition: background 0.5s;
-}
-#menu div a:link, #menu div a:visited{
-	background:#404040;
-}
-#menu div a:hover, #menu div a:active, #menu div a:focus{
-        display:block;
-	background:#ca0003;
-        transition: background 0s;
-        transition: width 2s ease;
-}
-.sousmenu{
-	position:absolute;
-	left:400px;
-	top:0;
-}
-#content{
-	margin:20px 0 0 10px;
-	width:600px;
-	border:1px solid #abc;
-	float:left;
-}
-.formulaire-content {
-/*    margin-left: 300px;
-    margin-right: 300px;*/
-}
-.formulaire-content form {
-    text-align: center;
-    padding-top: 150px;
-    margin-left: 300px;
-    margin-right: 300px;
-}
-
-input {
-    text-align: center;
-/*    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-   border-radius: 5px;*/
-}
-
-.bt-envoyer {
-    border: 1px solid #656565;
-    background: #F46767;
-    color:#FE0000;
-    box-shadow: 0px 0px 10px #343434;
-    width: 100px;
-    height: 25px;
-}
-
-.bt-envoyer:hover {
-    background: #FE0000;
-    color: #F46767;
-}
-
-.bt-annuler {
-    border: 1px solid #656565;
-    background: #FE0000;
-    color: #F46767;
-    box-shadow: 0px 0px 10px #343434;
-    width: 100px;
-    height: 25px;
-}
-
-.bt-annuler:hover {
-    background: #F46767;
-    color: #FE0000
+    background: #EEEEEE;
+    float:left;
+    display:inline;
+    margin-left: 0px;
 }

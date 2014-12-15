@@ -3,15 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}CFA INSTA{% endblock %}</title>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
         {% block stylesheets %}
             <link href="{{ asset('bundles/planninguser/css/style_admin.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('bundles/planninguser/css/style_admin_menu.css') }}" rel="stylesheet" type="text/css" />
+            <link href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('logo.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}
-            <script type="text/javascript" src="{{ asset('bundles/planninguser/js/functions.js') }}"></script>
+            {#<script type="text/javascript" src="{{ asset('bundles/planninguser/js/functions.js') }}"></script>#}
         {% endblock %}
     </body>
 </html>

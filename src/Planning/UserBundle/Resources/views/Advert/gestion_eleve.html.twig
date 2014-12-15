@@ -1,10 +1,11 @@
 {% extends '::base_admin.html.twig' %}
 {% block body %}
     <div class="page">
+        {% include ('PlanningUserBundle:Advert:header.html.twig') %}
+        {% include ('PlanningUserBundle:Advert:admin_menu.html.twig') %}
         <div class="page-content">
             {#action="traitement.php"#}
-            
-            <table class="display" cellspacing="0" width="100%">
+            <table id="eleve" class="display" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>Prénom</th>
@@ -36,4 +37,11 @@
             </table>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+    $(document).ready(function() {
+    $('#eleve').dataTable();
+    } );
+    </script>
 {% endblock %}

@@ -1,10 +1,12 @@
 {% extends '::base_admin.html.twig' %}
 {% block body %}
     <div class="page">
+        {% include ('PlanningUserBundle:Advert:header.html.twig') %}
+        {% include ('PlanningUserBundle:Advert:admin_menu.html.twig') %}
         <div class="page-content">
             {#action="traitement.php"#}
-            
-            <table class="display" cellspacing="0" width="100%">
+            {#<div class="content">#}
+            <table id="prof" class="display" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Prénom</th>
@@ -12,7 +14,6 @@
                         <th>Id User</th>
                     </tr>
                 </thead>
- 
                 <tfoot>
                     <tr>
                         <th>Prénom</th>
@@ -20,7 +21,6 @@
                         <th>Id User</th>
                     </tr>
                 </tfoot>
- 
                 <tbody>
                     {% for entity in Professeur %}
                         <tr>
@@ -31,6 +31,14 @@
                     {% endfor %}
                 </tbody>
             </table>
+            {#</div>#}
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+    $(document).ready(function() {
+    $('#prof').dataTable();
+    } );
+    </script>
 {% endblock %}

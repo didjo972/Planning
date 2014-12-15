@@ -1,0 +1,15 @@
+{% block body %}
+            <div id="menu">
+                <div class="menu" onmouseover="affiche(this)">
+                    <ul>
+                        <li><a href="{{ path('gestion_promo') }}">Gestion Promotion</a></li>
+                        <li><a href="#">Créer un cours</a></li>
+                        <li><a href="{{ path('gestion_eleve') }}">Gestion élève</a></li>
+                        <li><a href="{{ path('gestion_professeur') }}">Gestion professeur</a></li>
+                        <li><a href="{{ path('gestion_matiere') }}">Ajouter une matière</a></li>
+                        <li><a href="{{ path('gestion_site') }}">Gestion des sites</a></li>
+                        <li><a href="{{ path('gestion_salle') }}">Gestion des salles</a></li>
+                    </ul>
+                </div>
+            </div>
+{% endblock %}
