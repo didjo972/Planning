@@ -8,3 +8,8 @@ and open the template in the editor.
     Author     : Nizaru
 */
 
+div.gestion {
+    display: inline;
+    border: 1px;
+    border-style: solid;
+}

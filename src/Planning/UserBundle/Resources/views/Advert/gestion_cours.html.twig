@@ -5,31 +5,27 @@
         {% include ('PlanningUserBundle:Advert:admin_menu.html.twig') %}
         <div class="page-content">
             {#action="traitement.php"#}
-            <table id="salle" class="display" cellspacing="0">
+            {#<table id="cours" class="display" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nnuméro de Salle</th>
-                        <th>Nombre de PC</th>
-                        <th>Libellé du Cours</th>
                         <th>Id du Cours</th>
-                        {#<th>Id User</th>
-                        <th>N° de promotion</th>#}
+                        <th>Dure/J</th>
+                        <th>Date de Début</th>
+                        <th>Date de Fin</th>
                     </tr>
                 </thead>
                 
                 <tfoot>
                     <tr>
-                        <th>Nnuméro de Salle</th>
-                        <th>Nombre de PC</th>
-                        <th>Libellé du Cours</th>
                         <th>Id du Cours</th>
-                        {#<th>Id User</th>
-                        <th>N° de promotion</th>#}
+                        <th>Dure/J</th>
+                        <th>Date de Début</th>
+                        <th>Date de Fin</th>
                     </tr>
                 </tfoot>
 
                 <tbody>
-                    {% for entity in Salle %}
+                    {% for entity in Cours %}
                         <tr>
                             <td>{{entity.numSalle}}</td>
                             <td>{{entity.nbPc}}</td>
@@ -43,12 +39,12 @@
                             {% else %}
                                 <td>Null</td>
                             {% endif %}
-                            {#<td>{{entity.useriduser.id}}</td>
-                            <td>{{entity.promotionidpromotion.numPromotion}}</td>#}
+                            <td>{{entity.useriduser.id}}</td>
+                            <td>{{entity.promotionidpromotion.numPromotion}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
-            </table>
+            </table>#}
             <div class="gestion">
                 <div class="creation">
                     {{ form(form) }}
@@ -60,10 +56,10 @@
         </div>
     </div>
 {% endblock %}
-{% block javascripts %}
+{#{% block javascripts %}
     <script>
     $(document).ready(function() {
-    $('#salle').dataTable();
+    $('#cours').dataTable();
     } );
     </script>
-{% endblock %}
+{% endblock %}#}

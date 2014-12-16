@@ -30,11 +30,23 @@
                             <td>{{entity.prenom}}</td>
                             <td>{{entity.nom}}</td>
                             <td>{{entity.useriduser.id}}</td>
-                            <td>{{entity.promotionidpromotion.numPromotion}}</td>
+                            {% if entity.promotionidpromotion != null %}
+                                <td>{{entity.promotionidpromotion.numPromotion}}</td>
+                            {% else %}
+                                <td></td>
+                            {% endif %}
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="gestion">
+                <div class="creation">
+                    {{ form(form) }}
+                </div>
+                <div class="suppression">
+                    hey
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

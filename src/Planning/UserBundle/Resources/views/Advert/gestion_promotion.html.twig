@@ -10,7 +10,6 @@
                     <tr>
                         <th>Id Promotion</th>
                         <th>Numéro de promotion</th>
-                        <th>Nombre d'élève</th>
                     </tr>
                 </thead>
  
@@ -18,7 +17,6 @@
                     <tr>
                         <th>Id Promotion</th>
                         <th>Numéro de promotion</th>
-                        <th>Nombre d'élève</th>
                     </tr>
                 </tfoot>
  
@@ -27,11 +25,18 @@
                         <tr>
                             <td>{{entity.idpromotion}}</td>
                             <td>{{entity.numPromotion}}</td>
-                            <td>Null</td>
                         </tr>
                     {% endfor %}
                 </tbody>
-            </table>     
+            </table>    
+            <div class="gestion">
+                <div class="creation">
+                    {{ form(form) }}
+                </div>
+                <div class="suppression">
+                    
+                </div>
+            </div>
 {#            <div class="formulaire-content">
                 <form method="post" action="">
                     <fieldset>

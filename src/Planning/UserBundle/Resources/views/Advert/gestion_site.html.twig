@@ -10,6 +10,7 @@
                     <tr>
                         <th>Libellé</th>
                         <th>Adresse</th>
+                        <th>Itinéraire</th>
                     </tr>
                 </thead>
  
@@ -17,6 +18,7 @@
                     <tr>
                         <th>Libellé</th>
                         <th>Adresse</th>
+                        <th>Itinéraire</th>
                     </tr>
                 </tfoot>
  
@@ -25,10 +27,19 @@
                         <tr>
                             <td>{{entity.libelle}}</td>
                             <td>{{entity.adresse}}</td>
+                            <td><a href="https://www.google.fr/maps/dir/17+Rue+Linn%C3%A9,+Paris/3+Rue+des+Trois+Bornes,+75011+Paris/">Itinéraire</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="gestion">
+                <div class="creation">
+                    {{ form(form) }}
+                </div>
+                <div class="suppression">
+                    
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

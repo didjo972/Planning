@@ -24,7 +24,7 @@ class Matiere
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=255, nullable=true)
+     * @ORM\Column(name="libelle", type="string", length=255, nullable=false)
      */
     private $libelle;
 

@@ -24,7 +24,7 @@ class Salle
     /**
      * @var integer
      *
-     * @ORM\Column(name="num_salle", type="integer", nullable=true)
+     * @ORM\Column(name="num_salle", type="integer", nullable=false)
      */
     private $numSalle;
 

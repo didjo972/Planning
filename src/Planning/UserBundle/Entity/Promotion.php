@@ -24,7 +24,7 @@ class Promotion
     /**
      * @var integer
      *
-     * @ORM\Column(name="num_promotion", type="integer", nullable=true)
+     * @ORM\Column(name="num_promotion", type="integer", nullable=false)
      */
     private $numPromotion;
 

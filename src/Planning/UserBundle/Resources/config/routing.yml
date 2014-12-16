@@ -41,3 +41,16 @@ gestion_site:
 gestion_salle:
     path:    /g_salle
     defaults: { _controller: PlanningUserBundle:Planning:gestionsalle}
+    
+gestion_cours:
+    path:    /g_cours
+    defaults: { _controller: PlanningUserBundle:Planning:gestioncours}
+    
+create:
+    path:    /create
+    defaults: { _controller: PlanningUserBundle:Planning:create}
+
+register:
+    path:    /register
+    defaults: { _controller: PlanningUserBundle:Planning:register}
+    

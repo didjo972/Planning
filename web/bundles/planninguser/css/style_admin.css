@@ -32,3 +32,18 @@ and open the template in the editor.
     display:inline;
     margin-left: 0px;
 }
+
+div.gestion {
+    border: 1px;
+    border-style: solid;
+}
+
+div.creation{
+    display: inline-block;
+    width: 50%;
+}
+
+div.suppression {
+    display: inline;
+    width: 50%;
+}

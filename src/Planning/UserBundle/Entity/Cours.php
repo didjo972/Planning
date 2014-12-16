@@ -43,7 +43,7 @@ class Cours
     private $dateFin;
     
     /**
-     * @ORM\OneToOne(targetEntity="Planning\UserBundle\Entity\Professeur", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Planning\UserBundle\Entity\Professeur", cascade={"persist"})
      * @ORM\JoinColumn(referencedColumnName="idprofesseur")
      */
     private $professeuridprofesseur;
