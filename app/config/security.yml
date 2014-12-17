@@ -48,7 +48,7 @@ security:
                 check_path: fos_user_security_check
             logout:
                 path:       fos_user_security_logout
-                target:     /logout
+                target:     /login
                 #invalidate_session: false
             remember_me:
                 key:        %secret% # %secret% est un paramètre de parameters.yml

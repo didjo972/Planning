@@ -2,15 +2,9 @@
         <div id="haut">
             <div class="header_logo"></div>
             <div class="deconnexion">
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <a href="{{ path('fos_user_security_login') }}">
-                        <input  type="submit" class="arrondi" value="" />
-                    </a>
-                {% else %}
-                    <a href="{{ path('fos_user_security_login') }}">
-                        Se Connecter{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
-                    </a>
-                {% endif %}
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <input  type="submit" class="arrondi" value="" />
+                </a>
             </div> 
         </div>
 {% endblock %}
