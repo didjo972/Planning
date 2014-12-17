@@ -5,13 +5,16 @@
         {% include ('PlanningUserBundle:Advert:admin_menu.html.twig') %}
         <div class="page-content">
             {#action="traitement.php"#}
-            {#<table id="cours" class="display" cellspacing="0">
+            <table id="cours" class="display" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Id du Cours</th>
                         <th>Dure/J</th>
                         <th>Date de Début</th>
                         <th>Date de Fin</th>
+                        <th>N°Promotion</th>
+                        <th>Libellé du Cours</th>
+                        <th>Professeur</th>
                     </tr>
                 </thead>
                 
@@ -21,30 +24,26 @@
                         <th>Dure/J</th>
                         <th>Date de Début</th>
                         <th>Date de Fin</th>
+                        <th>N°Promotion</th>
+                        <th>Libellé du Cours</th>
+                        <th>Professeur</th>
                     </tr>
                 </tfoot>
 
                 <tbody>
                     {% for entity in Cours %}
                         <tr>
-                            <td>{{entity.numSalle}}</td>
-                            <td>{{entity.nbPc}}</td>
-                            {% if entity.siteidsite != null %}
-                            <td>{{entity.siteidsite.libelle}}</td>
-                            {% else %}
-                                <td>Null</td>
-                            {% endif %}
-                            {% if entity.coursidcours != null %}
-                            <td>{{entity.coursidcours.idcours}}</td>
-                            {% else %}
-                                <td>Null</td>
-                            {% endif %}
-                            <td>{{entity.useriduser.id}}</td>
+                            <td>{{entity.idcours}}</td>
+                            <td>{{entity.dure}}</td>
+                            <td>{{entity.dateDebut|date("d-m-Y")}}</td>
+                            <td>{{entity.dateFin|date("d-m-Y")}}</td>
                             <td>{{entity.promotionidpromotion.numPromotion}}</td>
+                            <td>{{entity.matiereidmatiere.libelle}}</td>
+                            <td>{{entity.professeuridprofesseur.nom}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
-            </table>#}
+            </table>
             <div class="gestion">
                 <div class="creation">
                     {{ form(form) }}
@@ -56,10 +55,10 @@
         </div>
     </div>
 {% endblock %}
-{#{% block javascripts %}
+{% block javascripts %}
     <script>
     $(document).ready(function() {
     $('#cours').dataTable();
     } );
     </script>
-{% endblock %}#}
+{% endblock %}

@@ -1,18 +1,16 @@
 {% block body %}
-            <div id="haut">
-                <div class="header_logo"></div>
-                <div class="deconnexion">
-                    <ul>
-                        <li>
-                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                <a href="{{ path('fos_user_security_login') }}">
-                                    Se Déconnecter
-                                </a>
-                            {% else %}
-                                <a href="{{ path('fos_user_security_login') }}">Se Connecter{#{{ 'layout.login'|trans({}, 'FOSUserBundle') }}#}</a>
-                            {% endif %}
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div id="haut">
+            <div class="header_logo"></div>
+            <div class="deconnexion">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <a href="{{ path('fos_user_security_login') }}">
+                        <input  type="submit" class="arrondi" value="" />
+                    </a>
+                {% else %}
+                    <a href="{{ path('fos_user_security_login') }}">
+                        Se Connecter{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                {% endif %}
+            </div> 
+        </div>
 {% endblock %}

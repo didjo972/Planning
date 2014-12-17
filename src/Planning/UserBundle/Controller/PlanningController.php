@@ -45,7 +45,7 @@ class PlanningController extends Controller {
         $Cours = $this->getDoctrine()
                 ->getRepository('PlanningUserBundle:Cours')
                 ->findOneBy(array('promotionpromotion'=>$Promotion->getIdpromotion()));
-        return $this->render('PlanningUserBundle:Advert:planning.html.twig', array('Cours' => $Cours));
+        return $this->render('PlanningUserBundle:Advert:fullcalendar.html.twig', array('Cours' => $Cours));
     }
     public function accueilAction(){
         // Pour charger un utilisateur
@@ -303,7 +303,7 @@ class PlanningController extends Controller {
                 throw $this->createNotFoundException('Aucun cours trouvé pour la promotion demandé');
             }
 
-            return $this->render('PlanningUserBundle:Advert:planning_annuel.html.twig', array('Cours' => $Cours,
+            return $this->render('PlanningUserBundle:Advert:fullcalendar.html.twig', array('Cours' => $Cours,
                                                                                           'Promotion' => $Promotion));
     }
 }

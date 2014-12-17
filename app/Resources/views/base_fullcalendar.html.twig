@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}CFA INSTA{% endblock %}</title>
+        <script src="{{ asset('bundles/planninguser/js/moment.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/planninguser/js/jquery.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/planninguser/js/fullcalendar.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/planninguser/js/fr.js') }}" type="text/javascript"></script>
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/planninguser/css/style_accueil.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('bundles/planninguser/css/style_menu.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('bundles/planninguser/css/style_fullcalendar.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('bundles/planninguser/css/fullcalendar.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('bundles/planninguser/css/fullcalendar.print.css') }}" rel="stylesheet" type="text/css" media='print' />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('logo.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

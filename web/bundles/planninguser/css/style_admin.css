@@ -13,37 +13,39 @@ and open the template in the editor.
     padding:0;
 }
 
+html, body 
+{
+    height: 100%;
+}
+
 .page
 {
     margin-left: auto;
     margin-right: auto;
-    width: auto;
+    width: 1250px;
     height: auto;
-    background: #FFFFFF
+    background: #EEEEEE;
+    box-shadow: 0 0 10px #aaa;
+    min-height: 100%;
+/*    position: relative;*/
 }
 
 .page-content
 {
     width: 950px;
     height: auto;
-    box-shadow: 0 0 10px #aaa;
-    background: #EEEEEE;
     float:left;
     display:inline;
-    margin-left: 0px;
 }
 
-div.gestion {
-    border: 1px;
-    border-style: solid;
-}
-
-div.creation{
-    display: inline-block;
-    width: 50%;
-}
-
-div.suppression {
-    display: inline;
-    width: 50%;
+#bas
+{
+        position:absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -625px; 
+        margin-top: 100px;  
+        width: 300px;
+        height: 280px;
+	background: #ca0003 ;
 }

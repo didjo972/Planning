@@ -8,85 +8,49 @@ and open the template in the editor.
     Author     : Nizaru
 */
 
-.header_logo
+#menu
 {
-    position:absolute;
-    width: 150px;
-    height: 67px;
-    margin-left: 20px;  
-    margin-top: 25px;   
-    margin-right: auto;
-    background-image: url("../images/logo.jpg");
-}
-
-.deconnexion
-{
-    width:auto;
-    padding:8px 0;
-    text-align:center;
-    display: inline-block;
+    background:#0f0;
+    color:#fff;
     float:left;
-    margin:0 8px 0 0;
-    border-radius:7px;
-    font-size: 0.85em;
-    width:120px;
-    color:#000;
-    font-family: Arial,sans-serif;
+    display:inline;
+/*    margin-left: 175px;*/
 }
 
-#haut
+#menu div
 {
-        margin-left: auto;
-        margin-right: auto;
-        width: 1250px;
-        height: 120px;
-	background: #ca0003 ;
+    width: 300px;
 }
 
-#bas
+.menu
 {
-        position:absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: -625px; 
-        margin-top: 100px;  
-        width: 300px;
-        height: 280px;
-	background: #ca0003 ;
+    position:relative;
 }
 
-#menu{
-/*	margin: 0px 0 0 0px;*/
-	background:#0f0;
-	color:#fff;
-	float:left;
-	display:inline;
-        margin-left: 58px;
-}
-#menu div{
-	width:300px;
-}
-.menu{
-	position:relative;
-}
-#menu div a:link, #menu div a:visited, #menu div a:hover{
-	color:#fff;
-	font-family:arial,sans-serif;
-	font-size:20px;
-	text-decoration:none;
-	padding-top:3px;
-	height:50px;
-	display:block;
-}
-#menu div a:link, #menu div a:visited{
-	background:#404040;
-}
-#menu div a:hover, #menu div a:active, #menu div a:focus{
-        display:block;
-	background:#ca0003;
+#menu div a:link, #menu div a:visited, #menu div a:hover
+{
+    color:#fff;
+    font-family:arial,sans-serif;
+    font-size:20px;
+    text-decoration:none;
+    padding-top:3px;
+    height:50px;
+    display:block;
 }
 
-ul li{
+#menu div a:link, #menu div a:visited
+{
+    background:#404040;
+}
+
+#menu div a:hover, #menu div a:active, #menu div a:focus
+{
+    display:block;
+    background:#ca0003;
+}
+
+ul li
+{
      background:linear-gradient(#90C, #8600B3);
 }
 

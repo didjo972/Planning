@@ -24,7 +24,10 @@ class EleveType extends AbstractType {
         $builder->add('prenom', 'text');
         $builder->add('nom', 'text');
         $builder->add('useriduser', new UserType());
-        $builder->add('promotionidpromotion', new PromotionType());
+        $builder->add('promotionidpromotion', 'entity', array(
+            'class'=>'PlanningUserBundle:Promotion',
+            'property'=>'numPromotion',
+            'multiple'=>false));
         $builder->add('save',      'submit');
     }
 

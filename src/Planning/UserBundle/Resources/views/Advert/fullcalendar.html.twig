@@ -1,0 +1,54 @@
+{% extends '::base_fullcalendar.html.twig' %}
+{% block body %}
+    <div class="page">
+        {% include ('PlanningUserBundle:Advert:menu.html.twig') %}
+        <div class="page-content">
+            
+            <div id="calendar"></div>
+            
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+<script>
+	$(document).ready(function() 
+        {
+		$('#calendar').fullCalendar({
+			defaultDate: '2014-12-01',
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			events: [
+                                {
+					title: 'JAVA',
+					start: '2014-09-15',
+					end: '2014-09-27'
+				},
+				{
+					title: 'PHP',
+					start: '2014-12-01',
+                                        end: '2014-12-20'
+				},
+                                {
+					title: 'Contrôle',
+					start: '2014-12-10T10:00:00',
+				},
+				{
+					title: 'COM',
+					start: '2015-04-01',
+				},
+                                {
+					title: 'CDP',
+					start: '2015-04-02',
+					end: '2015-04-04'
+				},
+                                {
+					title: 'ANDROID',
+					start: '2015-04-07',
+					end: '2015-04-25'
+				},
+			]
+		});
+		
+	} );
+</script>
+{% endblock %}
