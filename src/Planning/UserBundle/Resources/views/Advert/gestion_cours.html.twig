@@ -58,7 +58,34 @@
 {% block javascripts %}
     <script>
     $(document).ready(function() {
-    $('#cours').dataTable();
+        $('#cours').dataTable();
+        
+        $('#cours tbody').on('click', 'tr', function () {
+        var r = confirm("Voulez-vous supprimé ce cours ?");
+        if (r == true) {
+            var tr = $(this).closest('tr');
+            var idCours = tr.find("td:eq(0)").text();
+            {#var DATA = $('td[id="cell_3"]').html();#}
+            //var DATA = $(this).attr('id');
+            //var DATA = $(this).parent().attr('id');
+            //var DATA = document.getElementsByTagName('tr')[2].innerHTML;
+            alert(idCours);
+            $.ajax({
+            type: "GET",
+            url: "{{ path('suppression_cours')}}",
+            data: 'idcours=' + idCours,
+            cache: false,
+            timeout: 10000,
+            success: function(data) {
+              alert(data);},
+            error: function() {
+              alert('La requête n\'a pas abouti'); }
+            });
+        } else {
+            x = "Ce cours n'a pas été supprimé !";
+            alert(x);
+        }
+    } );
     } );
     </script>
 {% endblock %}

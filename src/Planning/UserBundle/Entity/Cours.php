@@ -59,6 +59,12 @@ class Cours
      * @ORM\JoinColumn(referencedColumnName="idpromotion")
      */
     private $promotionidpromotion;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Planning\UserBundle\Entity\Salle", cascade={"persist"})
+     * @ORM\JoinColumn(referencedColumnName="idsalle")
+     */
+    private $salleidsalle;
 
 
     /**
@@ -207,5 +213,28 @@ class Cours
     public function getPromotionidpromotion()
     {
         return $this->promotionidpromotion;
+    }
+
+    /**
+     * Set salleidsalle
+     *
+     * @param \Planning\UserBundle\Entity\Salle $salleidsalle
+     * @return Cours
+     */
+    public function setSalleidsalle(\Planning\UserBundle\Entity\Salle $salleidsalle = null)
+    {
+        $this->salleidsalle = $salleidsalle;
+
+        return $this;
+    }
+
+    /**
+     * Get salleidsalle
+     *
+     * @return \Planning\UserBundle\Entity\Salle 
+     */
+    public function getSalleidsalle()
+    {
+        return $this->salleidsalle;
     }
 }

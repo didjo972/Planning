@@ -8,6 +8,7 @@
             <table id="eleve" class="display" cellspacing="0" width="100%">
                 <thead>
                     <tr>
+                        <th>Id Élève</th>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Id User</th>
@@ -17,6 +18,7 @@
  
                 <tfoot>
                     <tr>
+                        <th>Id Élève</th>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Id User</th>
@@ -27,6 +29,7 @@
                 <tbody>
                     {% for entity in Eleve %}
                         <tr>
+                            <td>{{entity.ideleve}}</td>
                             <td>{{entity.prenom}}</td>
                             <td>{{entity.nom}}</td>
                             <td>{{entity.useriduser.id}}</td>
@@ -53,7 +56,34 @@
 {% block javascripts %}
     <script>
     $(document).ready(function() {
-    $('#eleve').dataTable();
+        $('#eleve').dataTable();
+        
+        $('#eleve tbody').on('click', 'tr', function () {
+        var r = confirm("Voulez-vous supprimé cet élève ?");
+        if (r == true) {
+            var tr = $(this).closest('tr');
+            var idEleve = tr.find("td:eq(0)").text();
+            {#var DATA = $('td[id="cell_3"]').html();#}
+            //var DATA = $(this).attr('id');
+            //var DATA = $(this).parent().attr('id');
+            //var DATA = document.getElementsByTagName('tr')[2].innerHTML;
+            //alert(idEleve);
+            $.ajax({
+            type: "GET",
+            url: "{{ path('suppression_eleve')}}",
+            data: 'ideleve=' + idEleve,
+            cache: false,
+            timeout: 10000,
+            success: function(data) {
+              alert(data);},
+            error: function() {
+              alert('La requête n\'a pas abouti'); }
+            });
+        } else {
+            x = "Cet élève n'a pas été supprimé !";
+            alert(x);
+        }
     } );
+    });
     </script>
 {% endblock %}

@@ -8,6 +8,7 @@
             <table id="site" class="display" cellspacing="0" width="100%">
                 <thead>
                     <tr>
+                        <th>Id Site</th>
                         <th>Libellé</th>
                         <th>Adresse</th>
                         <th>Itinéraire</th>
@@ -16,6 +17,7 @@
  
                 <tfoot>
                     <tr>
+                        <th>Id Site</th>
                         <th>Libellé</th>
                         <th>Adresse</th>
                         <th>Itinéraire</th>
@@ -25,6 +27,7 @@
                 <tbody>
                     {% for entity in Site %}
                         <tr>
+                            <td>{{entity.idsite}}</td>
                             <td>{{entity.libelle}}</td>
                             <td>{{entity.adresse}}</td>
                             <td><a href="https://www.google.fr/maps/dir/17+Rue+Linn%C3%A9,+Paris/3+Rue+des+Trois+Bornes,+75011+Paris/">Itinéraire</a></td>
@@ -46,7 +49,34 @@
 {% block javascripts %}
     <script>
     $(document).ready(function() {
-    $('#site').dataTable();
+        $('#site').dataTable();
+        
+        $('#site tbody').on('click', 'tr', function () {
+        var r = confirm("Voulez-vous supprimé ce site ?");
+        if (r == true) {
+            var tr = $(this).closest('tr');
+            var idSite = tr.find("td:eq(0)").text();
+            {#var DATA = $('td[id="cell_3"]').html();#}
+            //var DATA = $(this).attr('id');
+            //var DATA = $(this).parent().attr('id');
+            //var DATA = document.getElementsByTagName('tr')[2].innerHTML;
+            //alert(idPromotion);
+            $.ajax({
+            type: "GET",
+            url: "{{ path('suppression_site')}}",
+            data: 'idsite=' + idSite,
+            cache: false,
+            timeout: 10000,
+            success: function(data) {
+              alert(data);},
+            error: function() {
+              alert('La requête n\'a pas abouti'); }
+            });
+        } else {
+            x = "Ce Site n'a pas été supprimé !";
+            alert(x);
+        }
+    } );
     } );
     </script>
 {% endblock %}

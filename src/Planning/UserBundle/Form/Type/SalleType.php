@@ -27,7 +27,6 @@ class SalleType extends AbstractType {
             'class'=>'PlanningUserBundle:Site',
             'property'=>'libelle',
             'multiple'=>false));
-        //$builder->add('coursidcours', new CoursType());
         $builder->add('save',      'submit');
     }
 

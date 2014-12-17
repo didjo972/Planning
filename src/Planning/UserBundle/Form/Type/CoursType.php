@@ -36,6 +36,10 @@ class CoursType extends AbstractType {
             'class'=>'PlanningUserBundle:Promotion',
             'property'=>'numPromotion',
             'multiple'=>false));
+        $builder->add('salleidsalle', 'entity', array(
+            'class'=>'PlanningUserBundle:Salle',
+            'property'=>'numSalle',
+            'multiple'=>false));
         $builder->add('save',      'submit');
     }
 

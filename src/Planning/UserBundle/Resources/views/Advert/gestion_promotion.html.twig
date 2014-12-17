@@ -36,29 +36,41 @@
                 <div class="suppression">
                     
                 </div>
-            </div>
-{#            <div class="formulaire-content">
-                <form method="post" action="">
-                    <fieldset>
-                        <p>
-                            <legend>Ajouter une Promotion</legend>
-                            <label>Numéro de promotion</label>
-                            <input type="text" style="width: 200px;"/> 
-                            <br>
-                            <br>
-                            <input class="bt-annuler" type="submit" value="Annuler" />
-                            <input class="bt-envoyer" type="submit" value="Envoyer" />
-                        </p>
-                    </fieldset>
-                </form>
-            </div>   #}         
+            </div>         
         </div>
     </div>
 {% endblock %}
 {% block javascripts %}
     <script>
     $(document).ready(function() {
-    $('#promo').dataTable();
+        $('#promo').dataTable();
+        
+        $('#promo tbody').on('click', 'tr', function () {
+        var r = confirm("Voulez-vous supprimé cette promotion ?");
+        if (r == true) {
+            var tr = $(this).closest('tr');
+            var idPromotion = tr.find("td:eq(0)").text();
+            {#var DATA = $('td[id="cell_3"]').html();#}
+            //var DATA = $(this).attr('id');
+            //var DATA = $(this).parent().attr('id');
+            //var DATA = document.getElementsByTagName('tr')[2].innerHTML;
+            //alert(idPromotion);
+            $.ajax({
+            type: "GET",
+            url: "{{ path('suppression_promo')}}",
+            data: 'idpromotion=' + idPromotion,
+            cache: false,
+            timeout: 10000,
+            success: function(data) {
+              alert(data);},
+            error: function() {
+              alert('La requête n\'a pas abouti'); }
+            });
+        } else {
+            x = "Cette promotion n'a pas été supprimé !";
+            alert(x);
+        }
     } );
+    });
     </script>
 {% endblock %}

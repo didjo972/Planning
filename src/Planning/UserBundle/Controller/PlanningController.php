@@ -23,6 +23,9 @@ use Planning\UserBundle\Entity\Site;
 use Planning\UserBundle\Entity\Salle;
 use Planning\UserBundle\Entity\Cours;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 use Planning\UserBundle\Form\Type\RegistrationType;
 use Planning\UserBundle\Form\Model\Registration;
 
@@ -202,6 +205,107 @@ class PlanningController extends Controller {
                 ->getRepository('PlanningUserBundle:Eleve')
                 ->findAll();
         return $this->render('PlanningUserBundle:Advert:gestion_eleve.html.twig', array('form' => $form->createView(), 'Eleve' => $Eleve));
+    }
+    
+    public function suppressioncoursAction(Request $request) {
+        $idCours =  $request->query->get('idcours');
+        $repository = $this->getDoctrine()->getRepository('PlanningUserBundle:Cours');
+        $Cours = $repository->find($idCours);
+        if(is_null($Cours) || !isset($Cours)) {
+            throw $this->createNotFoundException('Aucun Cours existe à cette id !');
+        } else {
+            $this->getDoctrine()->getManager()->remove($Cours);
+            $this->getDoctrine()->getManager()->flush();
+            return new Response("Ce cours a été supprimé !");
+        }
+    }
+    
+    public function suppressionpromoAction(Request $request) {
+        $idPromotion =  $request->query->get('idpromotion');
+        $repository = $this->getDoctrine()->getRepository('PlanningUserBundle:Promotion');
+        $Promotion = $repository->find($idPromotion);
+        if(is_null($Promotion->getNumPromotion()) || !isset($Promotion)) {
+            throw $this->createNotFoundException('Aucune Promotion existe à cette id !');
+        } else {
+            $this->getDoctrine()->getManager()->remove($Promotion);
+            $this->getDoctrine()->getManager()->flush();
+            return new Response("Cette promotion a été supprimé !");
+        }
+    }
+    
+    public function suppressioneleveAction(Request $request) {
+        $idEleve =  $request->query->get('ideleve');
+        $repository = $this->getDoctrine()->getRepository('PlanningUserBundle:Eleve');
+        $Eleve = $repository->find($idEleve);
+        $User = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:User')->find($Eleve->getUseriduser());
+        //return new Response($User->getId());
+        if(is_null($Eleve) || !isset($Eleve) || is_null($User) || !isset($User)) {
+            throw $this->createNotFoundException('Aucun Elève existe à cette id !');
+        } else {
+            $this->getDoctrine()->getManager()->remove($Eleve);
+            $this->getDoctrine()->getManager()->flush();
+            $this->getDoctrine()->getManager()->remove($User);
+            $this->getDoctrine()->getManager()->flush();
+            return new Response("Cet élève a été supprimé !");
+        }
+    }
+    
+    public function suppressionprofesseurAction(Request $request) {
+        $idProfesseur =  $request->query->get('idprofesseur');
+        $repository = $this->getDoctrine()->getRepository('PlanningUserBundle:Professeur');
+        $Professeur = $repository->find($idProfesseur);
+        $User = $this->getDoctrine()
+                ->getRepository('PlanningUserBundle:User')->find($Professeur->getUseriduser());
+        if(is_null($Professeur) || !isset($Professeur) || is_null($User) || !isset($User)) {
+            throw $this->createNotFoundException('Aucun Professeur existe à cette id !');
+        } else {
+            $this->getDoctrine()->getManager()->remove($Professeur);
+            $this->getDoctrine()->getManager()->flush();
+            $this->getDoctrine()->getManager()->remove($User);
+            $this->getDoctrine()->getManager()->flush();
+            return new Response("Ce professeur a été supprimé !");
+        }
+    }
+    
+    public function suppressionmatiereAction(Request $request) {
+        $idMatiere =  $request->query->get('idmatiere');
+        $repository = $this->getDoctrine()->getRepository('PlanningUserBundle:Matiere');
+        $Matiere = $repository->find($idMatiere);
+//        return new Response($Matiere->getIdmatiere());
+        if(is_null($Matiere) || !isset($Matiere)) {
+            throw $this->createNotFoundException('Aucune Matière existe à cette id !');
+        } else {
+            $this->getDoctrine()->getManager()->remove($Matiere);
+            $this->getDoctrine()->getManager()->flush();
+            return new Response("Cette matière a été supprimé !");
+        }
+    }
+    
+    public function suppressionsiteAction(Request $request) {
+        $idSite =  $request->query->get('idsite');
+        $repository = $this->getDoctrine()->getRepository('PlanningUserBundle:Site');
+        $Site = $repository->find($idSite);
+        if(is_null($Site) || !isset($Site)) {
+            throw $this->createNotFoundException('Aucun Site existe à cette id !');
+        } else {
+            $this->getDoctrine()->getManager()->remove($Site);
+            $this->getDoctrine()->getManager()->flush();
+            return new Response("Ce site a été supprimé !");
+        }
+    }
+    
+    public function suppressionsalleAction(Request $request) {
+        $idSalle =  $request->query->get('idsalle');
+        $repository = $this->getDoctrine()->getRepository('PlanningUserBundle:Salle');
+        $Salle = $repository->find($idSalle);
+        if(is_null($Salle) || !isset($Salle)) {
+            throw $this->createNotFoundException('Aucune Salle existe à cette id !');
+        } else {
+            $this->getDoctrine()->getManager()->remove($Salle);
+            $this->getDoctrine()->getManager()->flush();
+            return new Response("Cette salle a été supprimé !");
+        }
     }
     
     

@@ -9,6 +9,7 @@
             <table id="prof" class="display" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>Id Professeur</th>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Id User</th>
@@ -16,6 +17,7 @@
                 </thead>
                 <tfoot>
                     <tr>
+                        <th>Id Professeur</th>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Id User</th>
@@ -24,6 +26,7 @@
                 <tbody>
                     {% for entity in Professeur %}
                         <tr>
+                            <td>{{entity.idprofesseur}}</td>
                             <td>{{entity.prenom}}</td>
                             <td>{{entity.nom}}</td>
                             <td>{{entity.idprofesseur}}</td>
@@ -45,7 +48,34 @@
 {% block javascripts %}
     <script>
     $(document).ready(function() {
-    $('#prof').dataTable();
+        $('#prof').dataTable();
+        
+        $('#prof tbody').on('click', 'tr', function () {
+        var r = confirm("Voulez-vous supprimé ce professeur ?");
+        if (r == true) {
+            var tr = $(this).closest('tr');
+            var idProfesseur = tr.find("td:eq(0)").text();
+            {#var DATA = $('td[id="cell_3"]').html();#}
+            //var DATA = $(this).attr('id');
+            //var DATA = $(this).parent().attr('id');
+            //var DATA = document.getElementsByTagName('tr')[2].innerHTML;
+            //alert(idProfesseur);
+            $.ajax({
+            type: "GET",
+            url: "{{ path('suppression_professeur')}}",
+            data: 'idprofesseur=' + idProfesseur,
+            cache: false,
+            timeout: 10000,
+            success: function(data) {
+              alert(data);},
+            error: function() {
+              alert('La requête n\'a pas abouti'); }
+            });
+        } else {
+            x = "Ce professeur n'a pas été supprimé !";
+            alert(x);
+        }
+    } );
     } );
     </script>
 {% endblock %}

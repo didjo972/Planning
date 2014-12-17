@@ -10,8 +10,8 @@
                     <tr>
                         <th>Nnuméro de Salle</th>
                         <th>Nombre de PC</th>
-                        <th>Libellé du Cours</th>
-                        <th>Id du Cours</th>
+                        <th>Lieu</th>
+                        {#<th>Id du Cours</th>#}
                         {#<th>Id User</th>
                         <th>N° de promotion</th>#}
                     </tr>
@@ -21,8 +21,8 @@
                     <tr>
                         <th>Nnuméro de Salle</th>
                         <th>Nombre de PC</th>
-                        <th>Libellé du Cours</th>
-                        <th>Id du Cours</th>
+                        <th>Lieu</th>
+                        {#<th>Id du Cours</th>#}
                         {#<th>Id User</th>
                         <th>N° de promotion</th>#}
                     </tr>
@@ -38,11 +38,11 @@
                             {% else %}
                                 <td>Null</td>
                             {% endif %}
-                            {% if entity.coursidcours != null %}
+                            {#{% if entity.coursidcours != null %}
                             <td>{{entity.coursidcours.idcours}}</td>
                             {% else %}
                                 <td>Null</td>
-                            {% endif %}
+                            {% endif %}#}
                             {#<td>{{entity.useriduser.id}}</td>
                             <td>{{entity.promotionidpromotion.numPromotion}}</td>#}
                         </tr>

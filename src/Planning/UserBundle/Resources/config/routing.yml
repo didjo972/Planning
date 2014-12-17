@@ -46,6 +46,34 @@ gestion_cours:
     path:    /g_cours
     defaults: { _controller: PlanningUserBundle:Planning:gestioncours}
     
+suppression_promo:
+    path:    /g_promo/delating
+    defaults: { _controller: PlanningUserBundle:Planning:suppressionpromo}
+    
+suppression_cours:
+    path:    /g_cours/delating
+    defaults: { _controller: PlanningUserBundle:Planning:suppressioncours}
+    
+suppression_eleve:
+    path:    /g_eleve/delating
+    defaults: { _controller: PlanningUserBundle:Planning:suppressioneleve}
+    
+suppression_professeur:
+    path:    /g_professeur/delating
+    defaults: { _controller: PlanningUserBundle:Planning:suppressionprofesseur}
+    
+suppression_matiere:
+    path:    /g_matiere/delating
+    defaults: { _controller: PlanningUserBundle:Planning:suppressionmatiere}
+    
+suppression_salle:
+    path:    /g_salle/delating
+    defaults: { _controller: PlanningUserBundle:Planning:suppressionsalle}
+    
+suppression_site:
+    path:    /g_site/delating
+    defaults: { _controller: PlanningUserBundle:Planning:suppressionsite}
+    
 create:
     path:    /create
     defaults: { _controller: PlanningUserBundle:Planning:create}

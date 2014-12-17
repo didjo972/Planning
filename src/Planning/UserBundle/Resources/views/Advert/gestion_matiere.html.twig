@@ -8,12 +8,14 @@
             <table id="matiere" class="display" cellspacing="0" width="100%">
                 <thead>
                     <tr>
+                        <th>Id Matière</th>
                         <th>Libellé</th>
                     </tr>
                 </thead>
  
                 <tfoot>
                     <tr>
+                        <th>Id Matière</th>
                         <th>Libellé</th>
                     </tr>
                 </tfoot>
@@ -21,6 +23,7 @@
                 <tbody>
                     {% for entity in Matiere %}
                         <tr>
+                            <td>{{entity.idmatiere}}</td>
                             <td>{{entity.libelle}}</td>
                         </tr>
                     {% endfor %}
@@ -40,7 +43,34 @@
 {% block javascripts %}
     <script>
     $(document).ready(function() {
-    $('#matiere').dataTable();
+        $('#matiere').dataTable();
+        
+        $('#matiere tbody').on('click', 'tr', function () {
+        var r = confirm("Voulez-vous supprimé cette matière ?");
+        if (r == true) {
+            var tr = $(this).closest('tr');
+            var idMatiere = tr.find("td:eq(0)").text();
+            {#var DATA = $('td[id="cell_3"]').html();#}
+            //var DATA = $(this).attr('id');
+            //var DATA = $(this).parent().attr('id');
+            //var DATA = document.getElementsByTagName('tr')[2].innerHTML;
+            //alert(idPromotion);
+            $.ajax({
+            type: "GET",
+            url: "{{ path('suppression_matiere')}}",
+            data: 'idmatiere=' + idMatiere,
+            cache: false,
+            timeout: 10000,
+            success: function(data) {
+              alert(data);},
+            error: function() {
+              alert('La requête n\'a pas abouti'); }
+            });
+        } else {
+            x = "Cette matière n'a pas été supprimé !";
+            alert(x);
+        }
+    } );
     } );
     </script>
 {% endblock %}
