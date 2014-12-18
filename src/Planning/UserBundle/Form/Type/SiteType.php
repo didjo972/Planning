@@ -23,6 +23,7 @@ class SiteType extends AbstractType {
     {
         $builder->add('libelle', 'text');
         $builder->add('adresse', 'text');
+        $builder->add('itineraire', 'text');
         $builder->add('save',      'submit');
     }
 

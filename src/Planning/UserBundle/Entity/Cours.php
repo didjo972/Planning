@@ -31,14 +31,14 @@ class Cours
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_debut", type="date", nullable=true)
+     * @ORM\Column(name="date_debut", type="datetime", nullable=true)
      */
     private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_fin", type="date", nullable=true)
+     * @ORM\Column(name="date_fin", type="datetime", nullable=true)
      */
     private $dateFin;
     
@@ -61,11 +61,10 @@ class Cours
     private $promotionidpromotion;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Planning\UserBundle\Entity\Salle", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Salle")
      * @ORM\JoinColumn(referencedColumnName="idsalle")
      */
     private $salleidsalle;
-
 
     /**
      * Get idcours
@@ -214,6 +213,16 @@ class Cours
     {
         return $this->promotionidpromotion;
     }
+    
+    /**
+     * Get salleidsalle
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSalleidsalle()
+    {
+        return $this->salleidsalle;
+    }
 
     /**
      * Set salleidsalle
@@ -226,15 +235,5 @@ class Cours
         $this->salleidsalle = $salleidsalle;
 
         return $this;
-    }
-
-    /**
-     * Get salleidsalle
-     *
-     * @return \Planning\UserBundle\Entity\Salle 
-     */
-    public function getSalleidsalle()
-    {
-        return $this->salleidsalle;
     }
 }

@@ -167,14 +167,18 @@ class PlanningController extends Controller {
                                                                                         'form' => $form->createView()));
     }
     
-    public function gestionCoursAction() {
+    public function gestionCoursAction() 
+    {
         $Cours = $this->getDoctrine()
                 ->getRepository('PlanningUserBundle:Cours')
                 ->findAll();
-        $newCours = new Cours();
-            $form = $this->get('form.factory')->create(new CoursType(), $newCours);
         
-        if($form->handleRequest($this->getRequest())->isValid()){
+        $newCours = new Cours();
+        
+        $form = $this->get('form.factory')->create(new CoursType(), $newCours);
+        
+        if($form->handleRequest($this->getRequest())->isValid())
+        {
             $registration = $form->getData();
             $this->ajouterCours($registration);
         }

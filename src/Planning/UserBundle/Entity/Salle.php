@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Salle
  *
  * @ORM\Table(name="salle")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Planning\UserBundle\Entity\SalleRepository")
  */
 class Salle
 {
@@ -36,7 +36,7 @@ class Salle
     private $nbPc;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Planning\UserBundle\Entity\Site", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Planning\UserBundle\Entity\Site")
      * @ORM\JoinColumn(referencedColumnName="idSite")
      */
     private $siteidsite;

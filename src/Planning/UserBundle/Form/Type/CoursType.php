@@ -17,30 +17,50 @@ namespace Planning\UserBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Doctrine\ORM\EntityRepository;
 
-class CoursType extends AbstractType {
+class CoursType extends AbstractType 
+{
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('dure', 'integer');
-        $builder->add('dateDebut', 'date');
-        $builder->add('dateFin', 'date');
+        $builder->add('dateDebut', 'datetime');
+        
+        $builder->add('dateFin', 'datetime');
+        
         $builder->add('professeuridprofesseur', 'entity', array(
             'class'=>'PlanningUserBundle:Professeur',
             'property'=>'nom',
             'multiple'=>false));
+        
         $builder->add('matiereidmatiere', 'entity', array(
             'class'=>'PlanningUserBundle:Matiere',
             'property'=>'libelle',
             'multiple'=>false));
+        
         $builder->add('promotionidpromotion', 'entity', array(
             'class'=>'PlanningUserBundle:Promotion',
+            
             'property'=>'numPromotion',
             'multiple'=>false));
+        
+//        $builder->add('salleidsalle', 'entity', array(
+//            'by_reference' => true,
+//            'multiple' => true,   
+//            'expanded' => true,   
+//            'class'=>'PlanningUserBundle:Salle', 
+//            'query_builder'=>function(EntityRepository $er) 
+//                            {
+//                                return $er->getSalle();
+//                            },
+//            'property'=>'idsalle'));
+        
         $builder->add('salleidsalle', 'entity', array(
             'class'=>'PlanningUserBundle:Salle',
             'property'=>'numSalle',
-            'multiple'=>false));
-        $builder->add('save',      'submit');
+            'multiple'=>false));      
+        
+        $builder->add('save','submit');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

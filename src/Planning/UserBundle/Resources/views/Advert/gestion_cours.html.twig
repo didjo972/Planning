@@ -56,19 +56,15 @@
     </div>
 {% endblock %}
 {% block javascripts %}
-    <script>
+    <script>    
     $(document).ready(function() {
         $('#cours').dataTable();
         
         $('#cours tbody').on('click', 'tr', function () {
         var r = confirm("Voulez-vous supprimé ce cours ?");
-        if (r == true) {
+            if (r == true) {
             var tr = $(this).closest('tr');
             var idCours = tr.find("td:eq(0)").text();
-            {#var DATA = $('td[id="cell_3"]').html();#}
-            //var DATA = $(this).attr('id');
-            //var DATA = $(this).parent().attr('id');
-            //var DATA = document.getElementsByTagName('tr')[2].innerHTML;
             alert(idCours);
             $.ajax({
             type: "GET",
@@ -81,11 +77,11 @@
             error: function() {
               alert('La requête n\'a pas abouti'); }
             });
-        } else {
+            } else {
             x = "Ce cours n'a pas été supprimé !";
             alert(x);
         }
-    } );
-    } );
+        } );
+    }); 
     </script>
 {% endblock %}

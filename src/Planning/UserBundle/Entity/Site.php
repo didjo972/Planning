@@ -34,8 +34,13 @@ class Site
      * @ORM\Column(name="adresse", type="string", length=255, nullable=false)
      */
     private $adresse;
-
-
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="itineraire", type="string", length=255, nullable=false)
+     */
+    private $itineraire;
 
     /**
      * Get idsite
@@ -91,5 +96,28 @@ class Site
     public function getAdresse()
     {
         return $this->adresse;
+    }
+
+    /**
+     * Set itineraire
+     *
+     * @param string $itineraire
+     * @return Site
+     */
+    public function setItineraire($itineraire)
+    {
+        $this->itineraire = $itineraire;
+
+        return $this;
+    }
+
+    /**
+     * Get itineraire
+     *
+     * @return string 
+     */
+    public function getItineraire()
+    {
+        return $this->itineraire;
     }
 }
