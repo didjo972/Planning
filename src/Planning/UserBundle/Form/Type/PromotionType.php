@@ -22,6 +22,7 @@ class PromotionType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('numPromotion', 'integer');
+        $builder->add('nomPromotion', 'text');
         $builder->add('save',      'submit');
     }
 

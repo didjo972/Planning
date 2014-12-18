@@ -24,9 +24,16 @@ class Promotion
     /**
      * @var integer
      *
-     * @ORM\Column(name="num_promotion", type="integer", nullable=false)
+     * @ORM\Column(name="num_promotion", type="integer", nullable=false, unique=true)
      */
     private $numPromotion;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_promotion", type="integer", nullable=false, unique=true)
+     */
+    private $nomPromotion;
 
 
 
@@ -61,5 +68,28 @@ class Promotion
     public function getNumPromotion()
     {
         return $this->numPromotion;
+    }
+
+    /**
+     * Set nomPromotion
+     *
+     * @param integer $nomPromotion
+     * @return Promotion
+     */
+    public function setNomPromotion($nomPromotion)
+    {
+        $this->nomPromotion = $nomPromotion;
+
+        return $this;
+    }
+
+    /**
+     * Get nomPromotion
+     *
+     * @return integer 
+     */
+    public function getNomPromotion()
+    {
+        return $this->nomPromotion;
     }
 }
