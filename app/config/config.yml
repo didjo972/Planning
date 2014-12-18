@@ -80,3 +80,27 @@ fos_user:
     firewall_name: main                      
     # La classe de l'entité User que nous utilisons
     user_class:    Planning\UserBundle\Entity\User 
+    
+#    mailer: fos_user.mailer.twig_swift
+#    
+#    resetting:
+#        email:
+#            from_email:
+#                address:       didjo972@gmail.com
+#                sender_name:    Réinitialisation Password
+#    
+#            template: PlanningUserBundle:Security:resetting_email.twig
+#    registration:
+#        form:
+#            type: myapp_user_registration
+#        
+#        confirmation:
+#            enabled:    false
+#            from_email:
+#                # Adresse de l'expediteur
+#                address:       didjo972@gmail.com
+#                # Nom de l'expediteur
+#                sender_name:    Administrateur de Insta.fr
+#                
+#        email:
+#            template: PlanningUserBundle:Security:registration_email.twig

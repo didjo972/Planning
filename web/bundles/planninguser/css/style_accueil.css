@@ -8,20 +8,6 @@ and open the template in the editor.
     Author     : Nizaru
 */
 
-*{
-	margin:0;
-	padding:0;
-}
-
-.page
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 960px;
-    height: auto;
-    box-shadow: 0 0 10px #aaa;
-}
-
 div.header_logo
 {
     position:absolute;

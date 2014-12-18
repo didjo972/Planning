@@ -324,15 +324,12 @@ class PlanningController extends Controller {
             $em->persist($User);
             $em->flush();
             $newEleve = $registration;
-            echo $User->getId();
             $Promotion = $registration->getPromotionidpromotion();
-            echo $Promotion->getIdpromotion();
            
             $newEleve->setUseriduser($User);
             $newEleve->setPromotionidpromotion($Promotion);
             $em->persist($newEleve);
             $em->flush();
-             echo $newEleve->getIdeleve();
     }
     
     public function ajouterProfesseur($registration) {

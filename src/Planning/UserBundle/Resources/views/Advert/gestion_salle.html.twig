@@ -8,29 +8,26 @@
             <table id="salle" class="display" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nnuméro de Salle</th>
+                        <th>Id Salle</th>
+                        <th>Numéro de Salle</th>
                         <th>Nombre de PC</th>
                         <th>Lieu</th>
-                        {#<th>Id du Cours</th>#}
-                        {#<th>Id User</th>
-                        <th>N° de promotion</th>#}
                     </tr>
                 </thead>
                 
                 <tfoot>
                     <tr>
-                        <th>Nnuméro de Salle</th>
+                        <th>Id Salle</th>
+                        <th>Numéro de Salle</th>
                         <th>Nombre de PC</th>
                         <th>Lieu</th>
-                        {#<th>Id du Cours</th>#}
-                        {#<th>Id User</th>
-                        <th>N° de promotion</th>#}
                     </tr>
                 </tfoot>
 
                 <tbody>
                     {% for entity in Salle %}
                         <tr>
+                            <td>{{entity.idsalle}}</td>
                             <td>{{entity.numSalle}}</td>
                             <td>{{entity.nbPc}}</td>
                             {% if entity.siteidsite != null %}
@@ -38,13 +35,6 @@
                             {% else %}
                                 <td>Null</td>
                             {% endif %}
-                            {#{% if entity.coursidcours != null %}
-                            <td>{{entity.coursidcours.idcours}}</td>
-                            {% else %}
-                                <td>Null</td>
-                            {% endif %}#}
-                            {#<td>{{entity.useriduser.id}}</td>
-                            <td>{{entity.promotionidpromotion.numPromotion}}</td>#}
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -63,7 +53,30 @@
 {% block javascripts %}
     <script>
     $(document).ready(function() {
-    $('#salle').dataTable();
+        $('#salle').dataTable();
+        
+        $('#salle tbody').on('click', 'tr', function () {
+        var r = confirm("Voulez-vous supprimé cette salle ?");
+            if (r == true) {
+            var tr = $(this).closest('tr');
+            var idSalle = tr.find("td:eq(0)").text();
+            alert(idSalle);
+            $.ajax({
+            type: "GET",
+            url: "{{ path('suppression_salle')}}",
+            data: 'idsalle=' + idSalle,
+            cache: false,
+            timeout: 10000,
+            success: function(data) {
+              alert(data);},
+            error: function() {
+              alert('La requête n\'a pas abouti'); }
+            });
+            } else {
+            x = "Cette salle n'a pas été supprimé !";
+            alert(x);
+        }
+        } );
     } );
     </script>
 {% endblock %}
