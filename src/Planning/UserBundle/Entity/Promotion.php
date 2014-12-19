@@ -31,7 +31,7 @@ class Promotion
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_promotion", type="integer", nullable=false, unique=true)
+     * @ORM\Column(name="nom_promotion", type="string", nullable=false, unique=true)
      */
     private $nomPromotion;
 
